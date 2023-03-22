@@ -1,25 +1,102 @@
+@font-face {
+    font-family: "GeorgiaRegular";
+    src: url("../../assets/fonts/georgia/Georgia_regular.woff") format("woff2"), url("/mishakozarev-JSFE2023Q1/shelter/assets/fonts/georgia/Georgia_regular.woff2") format("woff");
+  }
+  @font-face {
+    font-family: "ArialRegular";
+    src: url("../../assets/fonts/arial/Arial.woff2") format("woff2"), url("../../assets/fonts/Arial.woff") format("woff");
+  }
+
+body{
+    box-sizing: border-box;
+    overflow: overlay;
+    /* scroll-behavior: smooth; */
+    background: rgb(68, 67, 67);
+    margin: 0;
+    padding: 0;
+    /* width: 100%; */
+    width: 1280px;
+}
 /* start HEADER */
 .header {
+    position: absolute;
+    width: 100%;
+    top: 30px;
 }
 .header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 .header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 .logo {
+    width: 184px;
 }
-.logo__title {
+.logo__title h2{
+    font-family: "GeorgiaRegular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.054em;
+    color: #F1CDB3;
+    margin: 0 0 10px 0 ;
 }
-.logo__subtitle {
+.logo__title h5 {
+    font-family: "ArialRegular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    margin: 0;
+}
+.logo__title{
+    margin: 0;
 }
 .menu {
+    max-width: 443px;
 }
 .menu__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+.menu__item {
+    margin-right: 35px;
+    list-style-type: none;
+}
+.menu__item:last-child{
+    margin-right: 0px;
+}
+.menu__item:first-child{
+    border-bottom: 3px solid #F1CDB3;
+}
+.menu__item a{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #CDCDCD;
+    text-decoration: none;
 }
 /* end HEADER */
 
 
 /* start NOT-ONLY */
 .not-only {
+    max-width:100%;
+    height: 100vh;
+    /* background: black; */
 }
 .not-only__container {
 }
