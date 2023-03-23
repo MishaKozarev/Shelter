@@ -17,6 +17,10 @@ body{
     /* width: 100%; */
     width: 1280px;
 }
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
 /* start HEADER */
 .header {
     position: absolute;
@@ -95,42 +99,116 @@ body{
 /* start NOT-ONLY */
 .not-only {
     max-width:100%;
-    height: 100vh;
-    /* background: black; */
+    height: 908px;
+    background: url(../../assets/images/bg/start-screen-background.jpg), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) #211F20;
 }
 .not-only__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
 }
 .not-only__row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+
 }
 .content {
+    max-width: 460px;
+    height: 322px;
+    margin-bottom: 243px;
 }
 .content__colum {
+    display: flex;
+    flex-direction: column;
 }
 .content__title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: #FFFFFF;
 }
 .content__subtitle {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #CDCDCD;
+    margin: 42px 0 42px 0;
 }
 .content__btn {
+    width: 207px;
+    height: 52px;
+    background: #F1CDB3;
+    border-radius: 100px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .not-only__img {
+    background: url(../../assets/images/start-screen-puppy.png);
+    width: 698px;
+    height: 728px;
+
 }
 /* end NOT-ONLY */
 
 
 /* start ABOUT */
 .about {
+    max-width: 1280px;
+    height: 588px;
+    background: white;
 }
 .about__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
 }
 .about__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .about__img {
+    background: url(../../assets/images/about-pets.png);
+    width: 300px;
+    height: 408px;
+    margin: 80px 0 0 175px;
 }
 .about__disc {
+    max-width: 430px;
+    height: 380px;
+    margin: 83px 175px 0 0;
 }
 .about__disc-title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
 }
 .about__disc-subtitle {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #4C4C4C;
+    margin-top: 22px;
 }
 
 
