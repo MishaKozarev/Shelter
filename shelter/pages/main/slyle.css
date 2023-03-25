@@ -110,6 +110,7 @@ a {
     font-size: 15px;
     line-height: 160%;
     color: #CDCDCD;
+    transition: 1s;
 }
 .menu__item:hover a{
     color: #FAFAFA;

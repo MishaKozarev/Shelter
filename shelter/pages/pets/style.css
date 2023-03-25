@@ -127,6 +127,10 @@ a {
     text-decoration: none;
     color: #545454;
 }
+.menu__link:hover {
+    transition: 1s;
+    color: #292929;
+}
 /* end HEADER */
 
 
