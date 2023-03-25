@@ -163,6 +163,9 @@ a {
     letter-spacing: 0.06em;
     color: #292929;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 .content__btn a{
@@ -311,10 +314,7 @@ a {
     letter-spacing: 0.06em;
     color: #292929;
     background: #FAFAFA;
-
 }
-
-
 .our-friends__btn {
     margin-top: 60px;
     width: 261px;
@@ -322,11 +322,13 @@ a {
     background: #F1CDB3;
     border-radius: 100px;
     border: none;
-
     font-size: 17px;
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .our-friends__btn a{
     font-family: "Georgia";
