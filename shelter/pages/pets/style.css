@@ -6,7 +6,9 @@
     font-family: "ArialRegular";
     src: url("../../assets/fonts/arial/Arial.woff2") format("woff2"), url("../../assets/fonts/Arial.woff") format("woff");
   }
-
+html {
+    scroll-behavior: smooth;
+}
 body{
     box-sizing: border-box;
     overflow: overlay;
@@ -42,15 +44,25 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
 }
-h1, h2, h3, h4, button{
+h1, h2, h3, h4, a, button{
     font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
 }
-h5, h6, p, a {
+h5, h6, p {
     font-family: "Arial";
     font-style: normal;
     font-weight: 400;
+}
+button {
+    cursor: pointer;
+    transition: 1s;
+}
+button:hover {
+    background: #FDDCC4;
+}
+a {
+    text-decoration: none;
 }
 /* start HEADER */
 .header {
@@ -64,11 +76,14 @@ h5, h6, p, a {
 .logo {
     width: 184px;
 }
-.logo__title h2{
+.logo__title h2 {
+    margin: 0 0 10px 0 ;
+}
+.logo__title h2 a{
     font-size: 32px;
     line-height: 110%;
     letter-spacing: 0.054em;
-    color: #545454;
+    color: #F1CDB3;
     margin: 0 0 10px 0 ;
 }
 .logo__title h5 {
@@ -91,10 +106,21 @@ h5, h6, p, a {
 .menu__item:last-child{
     margin-right: 0px;
 }
-.menu__item:first-child{
+.active{
     border-bottom: 3px solid #F1CDB3;
 }
-.menu__item a{
+.active a{
+    color: #292929;
+}
+.active:hover a{
+    cursor: default;
+    pointer-events: none
+}
+
+.menu__link {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
     font-size: 15px;
     line-height: 160%;
     text-decoration: none;
@@ -131,16 +157,21 @@ h5, h6, p, a {
     align-items: center;
     background: #FAFAFA;
     border-radius: 9px;
+    cursor: pointer;
+    transition: 1s;
 }
-.card__one {
+.card:hover{
+    background: white;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
-.card__two {
-}
-.card__three {
+.card:hover .card__btn{
+    border: none;
+    background: #FDDCC4;
 }
 .card__img {
     width: 270px;
     height: 270px;
+    border-radius: 9px 9px 0px 0px;
 }
 .card__img-one {
     background: url(../../assets/images/pets/katrine.png);
@@ -184,6 +215,8 @@ h5, h6, p, a {
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
+    background: #FAFAFA;
+
 }
 .nav {
     display: flex;
@@ -263,7 +296,7 @@ h5, h6, p, a {
 .contacts__icon {
     margin-right: 20px;
 }
-.contacts__text  {
+.contacts__text  a{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;

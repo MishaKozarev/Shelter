@@ -6,8 +6,10 @@
     font-family: "ArialRegular";
     src: url("../../assets/fonts/arial/Arial.woff2") format("woff2"), url("../../assets/fonts/Arial.woff") format("woff");
   }
-
-body{
+html {
+    scroll-behavior: smooth;
+}
+body {
     box-sizing: border-box;
     overflow: overlay;
     margin: 0;
@@ -18,15 +20,26 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
 }
-h1, h2, h3, h4, button{
+h1, h2, h3, h4, a, button{
     font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
 }
-h5, h6, p, a {
+h5, h6, p {
     font-family: "Arial";
     font-style: normal;
     font-weight: 400;
+}
+button {
+    cursor: pointer;
+    transition: 1s;
+}
+button:hover {
+    background: #FDDCC4;
+}
+
+a {
+    text-decoration: none;
 }
 .row {
     display: flex;
@@ -57,7 +70,10 @@ h5, h6, p, a {
 .logo {
     width: 184px;
 }
-.logo__title h2{
+.logo__title h2 {
+    margin: 0 0 10px 0 ;
+}
+.logo__title h2 a{
     font-size: 32px;
     line-height: 110%;
     letter-spacing: 0.054em;
@@ -88,10 +104,22 @@ h5, h6, p, a {
     border-bottom: 3px solid #F1CDB3;
 }
 .menu__item a{
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
     font-size: 15px;
     line-height: 160%;
     color: #CDCDCD;
-    text-decoration: none;
+}
+.menu__item:hover a{
+    color: #FAFAFA;
+}
+.menu__item:first-child a{
+    color: #FAFAFA;
+}
+.menu__item:first-child:hover a{
+    cursor: default;
+    pointer-events: none
 }
 /* end HEADER */
 
@@ -135,6 +163,12 @@ h5, h6, p, a {
     color: #292929;
     border: none;
 
+}
+.content__btn a{
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
 }
 .not-only__img{
     background: url(../../assets/images/start-screen-puppy.png);
@@ -208,17 +242,15 @@ h5, h6, p, a {
     margin-top: 59px;
 }
 .slider__btn {
-    position: absolute;
     width: 52px;
     height: 52px;
 }
 .slider__btn-prev {
     background: url(../../assets/images/button_arrow_pre.png);
-    left: 40px;
+
 }
 .slider__btn-next {
     background: url(../../assets/images/button_arrow_next.png);
-    right: 40px;
 }
 .card {
     width: 270px;
@@ -228,24 +260,28 @@ h5, h6, p, a {
     align-items: center;
     background: #FAFAFA;
     border-radius: 9px;
+    cursor: pointer;
+    transition: 1s;
 }
-.card__one {
-    margin: 0 0 0 105px;
+.card:hover{
+    background: white;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.card:hover .card__btn{
+    border: none;
+    background: #FDDCC4;
 }
 .card__two {
-    margin: 0 90px;
-}
-.card__three {
-    margin: 0 105px 0 0;
+    margin: 0 38px;
 }
 .card__img {
     width: 270px;
     height: 270px;
+    border-radius: 9px 9px 0px 0px;
+
 }
 .card__img-one {
     background: url(../../assets/images/pets/katrine.png);
-    width: 270px;
-    height: 270px;
 }
 .card__img-two {
     background: url(../../assets/images/pets/jennifer.png);
@@ -269,20 +305,31 @@ h5, h6, p, a {
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
-}
+    background: #FAFAFA;
 
+}
 .our-friends__btn {
+    margin-top: 60px;
     width: 261px;
     height: 52px;
     background: #F1CDB3;
     border-radius: 100px;
+    border: none;
     font-size: 17px;
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
-    border: none;
-    margin-top: 60px;
 }
+.our-friends__btn a{
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+}
+
 /* end OUR-FRIENDS */
 
 
@@ -309,8 +356,6 @@ h5, h6, p, a {
 }
 .help__list {
     display: flex;
-    /* align-items: center; */
-    /* justify-content: space-between; */
     flex-wrap: wrap;
     height: 281px;
     margin: 0;
@@ -388,7 +433,11 @@ h5, h6, p, a {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-    /* padding: 0 15px; */
+    transition: 1s;
+}
+.donation__btn:hover {
+    background: #FDDCC4;
+
 }
 .credit-icon {
     background: url(../../assets/icons/credit-card.svg);
@@ -396,7 +445,7 @@ h5, h6, p, a {
     height: 23px;
     margin-left: 15px;
 }
-.donation__btn h4{
+.donation__btn a{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
@@ -459,7 +508,7 @@ h5, h6, p, a {
 .contacts__icon {
     margin-right: 20px;
 }
-.contacts__text  {
+.contacts__text  a{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
