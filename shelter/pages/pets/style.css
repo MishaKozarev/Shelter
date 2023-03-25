@@ -64,6 +64,7 @@ button:hover {
 a {
     text-decoration: none;
 }
+
 /* start HEADER */
 .header {
     width: 100%;
@@ -222,29 +223,53 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 57px;
 }
-.nav__btn{
+.slider__btn{
     width: 52px;
     height: 52px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 1s;
 }
-.nav__btn-1{
-    background: url(../../assets/images/button_paginator-left2.png);
+.slider__btn h4{
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
 }
-.nav__btn-2{
-    background: url(../../assets/images/button_paginator-left1.png);
-    margin-left: 20px;
+.slider__btn-1{
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
 }
-.nav__btn-3{
-    background: url(../../assets/images/button_paginator-center.png);
+.slider__btn-2{
+    margin-left: 15px;
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
+}
+.slider__btn-3{
+    background: #F1CDB3;
+    border: 2px solid #F1CDB3;
+
     margin: 0 20px;
+    color: #292929;
 }
-.nav__btn-4{
-    background: url(../../assets/images/button_paginator-right1.png);
-    margin-right: 20px;
+.slider__btn-4{
+    border: 2px solid #F1CDB3;
+    margin-right: 15px;
+    color: #292929;
 }
-.nav__btn-5{
-    background: url(../../assets/images/button_paginator-right2.png);
+.slider__btn-5{
+    border: 2px solid #F1CDB3;
+    color: #292929;
+}
+.slider__btn:hover {
+    background: #F1CDB3;
+    color: #292929;
+    border: 2px solid #F1CDB3;
+
 }
 /* end our_friends */
 
@@ -296,11 +321,15 @@ a {
 .contacts__icon {
     margin-right: 20px;
 }
-.contacts__text  a{
+.contacts__text a{
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
     color: #F1CDB3;
+    transition: 1s;
+}
+.contacts__text:hover a{
+    color: white;
 }
 .contacts__phone {
     display: flex;

@@ -244,13 +244,16 @@ a {
 .slider__btn {
     width: 52px;
     height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 1s;
 }
-.slider__btn-prev {
-    background: url(../../assets/images/button_arrow_pre.png);
-
-}
-.slider__btn-next {
-    background: url(../../assets/images/button_arrow_next.png);
+.slider__btn:hover {
+    background: #F1CDB3;
 }
 .card {
     width: 270px;
@@ -266,6 +269,7 @@ a {
 .card:hover{
     background: white;
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
 }
 .card:hover .card__btn{
     border: none;
@@ -308,6 +312,8 @@ a {
     background: #FAFAFA;
 
 }
+
+
 .our-friends__btn {
     margin-top: 60px;
     width: 261px;
@@ -315,6 +321,7 @@ a {
     background: #F1CDB3;
     border-radius: 100px;
     border: none;
+
     font-size: 17px;
     line-height: 130%;
     letter-spacing: 0.06em;
@@ -433,11 +440,9 @@ a {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-    transition: 1s;
 }
-.donation__btn:hover {
-    background: #FDDCC4;
-
+.donation__btn {
+    background: #F1CDB3;
 }
 .credit-icon {
     background: url(../../assets/icons/credit-card.svg);
@@ -513,6 +518,11 @@ a {
     line-height: 115%;
     letter-spacing: 0.06em;
     color: #F1CDB3;
+    transition: 1s;
+
+}
+.contacts__text:hover a{
+    color: white;
 }
 .contacts__phone {
     display: flex;
