@@ -366,31 +366,19 @@ a {
 }
 .help__list {
     display: flex;
+    justify-content: center;
+    gap: 54px 120px;
     flex-wrap: wrap;
     height: 281px;
     margin: 0;
 }
 .item {
-    height: 113px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 120px 54px 0;
+}
 
-}
-.item_five {
-    margin: 0;
-}
-.item_six {
-    margin-left: 85px;
-}
-.item_eight {
-    margin-right: 120px;
-}
-.item_nine {
-    margin: 0;
-}
 .item__text {
     font-size: 20px;
     line-height: 115%;
