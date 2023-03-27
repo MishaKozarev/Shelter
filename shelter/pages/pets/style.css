@@ -247,16 +247,19 @@ a {
 .slider__btn-1{
     border: 2px solid #CDCDCD;
     color: #CDCDCD;
+    cursor: default;
 }
 .slider__btn-2{
     margin-left: 15px;
     border: 2px solid #CDCDCD;
     color: #CDCDCD;
+    cursor: default;
+
 }
 .slider__btn-3{
     background: #F1CDB3;
     border: 2px solid #F1CDB3;
-
+    cursor: default;
     margin: 0 20px;
     color: #292929;
 }
@@ -269,7 +272,7 @@ a {
     border: 2px solid #F1CDB3;
     color: #292929;
 }
-.slider__btn:hover {
+.slider__btn-4:hover, .slider__btn-5:hover {
     background: #F1CDB3;
     color: #292929;
     border: 2px solid #F1CDB3;
