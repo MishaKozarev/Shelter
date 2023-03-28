@@ -431,9 +431,10 @@ a {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    transition: 1s;
 }
-.donation__btn {
-    background: #F1CDB3;
+.donation__btn:hover {
+    background: #FDDCC4;
 }
 .credit-icon {
     background: url(../../assets/icons/credit-card.svg);
