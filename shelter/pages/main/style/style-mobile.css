@@ -1,0 +1,136 @@
+@media (max-width: 766px) {
+    .card__two {
+        display: none;
+    }
+    .card {
+        margin: 0;
+    }
+    .slider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 435px;
+    }
+}
+@media (max-width: 724px) {
+    .footer {
+        height: 809px;
+    }
+    .footer__row {
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding:0;
+    }
+    .footer__img {
+        margin: 30px 0 0 0;
+    }
+    .contacts__title {
+        font-size: 25px;
+        text-align: center;
+        width: 294px;
+    }
+}
+@media (max-width: 700px) {
+    /* start HEADER */
+    .menu {
+        display: none;
+    }
+
+    /* end HEADER */
+
+    /* start NOT-ONLY */
+
+}
+@media (max-width: 670px) {
+    /* start HELP */
+    .help {
+        height: 745px;
+    }
+    .help__colum {
+        padding: 0 15px 0;
+    }
+    .help__title {
+        font-size: 25px;
+        margin: 42px 0;
+    }
+    .help__list {
+        gap: 30px;
+    }
+    .item {
+        width: 130px;
+        height: 87px;
+    }
+    .item__icon {
+        margin: 0 0 20px 0;
+    }
+    .item__text {
+        font-size: 15px;
+        line-height: 110%;
+    }
+    /* end HELP */
+    .not-only {
+        height: 1020px;
+    }
+    .not-only__img {
+        padding: 0;
+    }
+    .content__colum {
+        align-items: center;
+    }
+    .content__title {
+        font-size: 25px;
+        height: 64px;
+        text-align: center;
+    }
+    .content__subtitle {
+        margin: 30px 0;
+    }
+}
+@media (max-width: 500px) {
+    .our-friends {
+        height: 791px;
+    }
+    .our-friends__colum {
+        justify-content: space-between;
+        height: 100%;
+    }
+    .our-friends__title {
+        font-size: 25px;
+        margin-top: 42px;
+    }
+    .slider {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        height: 507px;
+    }
+    .slider__btn {
+        position: absolute;
+        top: 455px
+    }
+    .slider__btn-prev {
+        left: 120px;
+    }
+    .slider__btn-next {
+        left: 272px;
+    }
+    .our-friends__btn {
+        margin-top: 42px;
+    }
+    .slider__btn-prev {
+        order: 3;
+
+    }
+
+}
+@media (max-width: 430px) {
+    .not-only {
+        height: 823px;
+    }
+
+}
+
+

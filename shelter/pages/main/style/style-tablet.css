@@ -49,8 +49,9 @@
         justify-content: center;
     }
     .not-only__img{
-        width: 100%;
+        width: 78.16%;
         max-width: 569px;
+        min-width: 260px;
         padding: 0 0 0 139px;
     }
     /* end NOT-ONLY */
