@@ -1,0 +1,132 @@
+@media(max-width:1070px){
+    .card__three {
+        display: none;
+    }
+}
+@media(max-width:951px){
+    /* start FOOTER */
+    .footer {
+        height: 639px;
+    }
+    .footer__row {
+        height: 100%;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        padding: 0 69px 0 63px;
+    }
+    .footer__img {
+        margin: 30px 0 0 171px;
+    }
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 295px;
+        height: 234px;
+        margin: 0;
+    }
+}
+@media(max-width:908px){
+    /* start NOT-ONLY */
+    .header__row {
+        padding: 0 30px 0;
+    }
+    .not-only {
+        height: 1165px;
+    }
+    .not-only__row {
+        flex-direction: column;
+        align-items: center;
+        justify-content:end;
+        height: 100%;
+    }
+    .content{
+        padding: 0 0 100px 0;
+    }
+    .content__btn-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .not-only__img{
+        width: 100%;
+        max-width: 569px;
+        padding: 0 0 0 139px;
+    }
+    /* end NOT-ONLY */
+}
+@media(max-width:820px){
+    /*START in-addition*/
+    .in-addition {
+        height: 783px;
+    }
+    .in-addition__row {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+    }
+    .in-addition__img {
+        width: 69.368%;
+        order: 1;
+        padding: 60px 0 0 0;
+    }
+}
+@media(max-width:769px){
+    /* start ABOUT */
+    .about {
+        min-height: 1048px;
+    }
+    .about__row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .about__img {
+        order: 2;
+        width: 35,29%;
+        padding: 48px 0 0 0;
+    }
+    .about__disc-title {
+        padding: 0;
+    }
+
+    /* start OUR-FRIENDS */
+    .our-friends__colum {
+        padding: 0 30px 0;
+    }
+    .slider {
+        justify-content: flex-start;
+    }
+    .card {
+        margin: 0;
+    }
+    .slider__btn-prev {
+        margin: 0 8px 0 0;
+    }
+    .card__one {
+        margin: 0 40px 0 0;
+    }
+    .card__two {
+        margin: 0 8px 0 0;
+    }
+    /* end OUR-FRIENDS */
+
+    /* start HELP */
+    .help {
+        height: 779px;
+    }
+    .help__colum {
+        max-width: 630px;
+    }
+    .help__list {
+        gap: 55px 60px;
+    }
+    .item {
+        width: 170px;
+    }
+    .item__icon {
+        margin: 0 0 30px 0;
+    }
+    /* end HELP */
+}
