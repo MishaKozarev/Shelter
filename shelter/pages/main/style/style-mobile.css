@@ -1,4 +1,4 @@
-@media (max-width: 766px) {
+@media (max-width: 767px) {
     .card__two {
         display: none;
     }
@@ -8,9 +8,17 @@
     .slider {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
         height: 435px;
+        max-width: 500px;
+    }
+    .slider__btn-next {
+        margin: 10px 0 0 30px;
+        order: 0;
+    }
+    .slider__btn-prev {
+        margin: 10px 30px 0 0;
     }
 }
 @media (max-width: 724px) {
@@ -37,10 +45,11 @@
     .menu {
         display: none;
     }
+    .burger {
+        display: block;
+    }
 
     /* end HEADER */
-
-    /* start NOT-ONLY */
 
 }
 @media (max-width: 670px) {
@@ -88,7 +97,7 @@
         margin: 30px 0;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 502px) {
     .our-friends {
         height: 791px;
     }
@@ -101,36 +110,150 @@
         margin-top: 42px;
     }
     .slider {
-        position: relative;
-        display: flex;
-        flex-direction: column;
         margin: 0;
+        width: 80.09%;
         height: 507px;
     }
-    .slider__btn {
-        position: absolute;
-        top: 455px
-    }
     .slider__btn-prev {
-        left: 120px;
+        order: 0;
     }
-    .slider__btn-next {
-        left: 272px;
-    }
-    .our-friends__btn {
-        margin-top: 42px;
-    }
-    .slider__btn-prev {
-        order: 3;
 
+    .footer__img {
+        min-width: 260px;
     }
 
 }
 @media (max-width: 430px) {
+    .header__row {
+        padding: 0 20px;
+    }
     .not-only {
         height: 823px;
     }
+    .not-only__row {
+        padding: 0 10px;
+        align-items: flex-end;
+    }
+    .content {
+        padding: 0 0 93px;
+    }
+    .content__title {
+        width: 100%;
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+    .content__subtitle {
+        text-align: center;
+        padding: 42px 0;
+        margin: 0;
+    }
 
+    .about {
+        min-height: 974px;
+    }
+    .about__row {
+        justify-content: flex-start;
+        padding: 27px 25px 0;
+    }
+    .about__disc {
+        text-align: justify;
+    }
+    .about__disc-title {
+        font-size: 25px;
+        text-align: center;
+        padding: 15px 0 0 0;
+    }
+    .about__img {
+        width: 96.3%;
+        max-width: 260px;
+        min-width: 250px;
+        padding: 138px 0 0 0;
+    }
+
+    .our-friends__colum {
+        justify-content: flex-start;
+        padding: 0 10px 0;
+    }
+    .our-friends__title {
+       margin: 42px 0 41px;
+    }
+    .our-friends__btn {
+        margin-top: 42px;
+    }
+    .slider__btn {
+        margin: 20px 0 0 0;
+    }
+    .slider__btn-prev {
+        margin-right: 40px;
+    }
+    .slider__btn-next {
+        margin-left: 40px;
+    }
+    .item img {
+        height: 50px;
+    }
+    .help__list {
+        justify-content: flex-start;
+    }
+
+
+    .in-addition {
+        height: 542.2px;
+    }
+    .in-addition__row {
+        padding: 0 10px;
+    }
+    .donation__title {
+        font-size: 25px;
+        text-align: center;
+    }
+    .donation {
+        align-items: center;
+        margin: 42px 0 0 0;
+    }
+    .donation__subtitle {
+        line-height: 160%;
+        letter-spacing: 0em;
+        margin: 19px 0 21px;
+
+    }
+    .donation__btn {
+        width: 281px;
+    }
+    .donation__btn a{
+        font-size: 15px;
+        line-height: 110%;
+    }
+    .donation__text {
+        text-align: justify;
+        padding: 0 10px;
+    }
+    .in-addition__img {
+        margin: 41px 0 0 0;
+        padding: 0;
+    }
+
+    .footer__row {
+        height: 100%;
+        padding: 0 10px;
+    }
+    .contacts_one {
+        margin: 30px 0 12px;
+        align-items: center;
+
+    }
+    .contacts_two .contacts__title{
+        margin-bottom: 41px;
+    }
+    .contacts_two .contacts__item-one{
+        margin-bottom: 37px;
+    }
 }
+@media(max-width:319px){
+    .help {
+        height: 1178px;
+    }
+}
+
 
 

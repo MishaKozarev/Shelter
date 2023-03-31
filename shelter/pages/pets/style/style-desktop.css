@@ -34,7 +34,7 @@ body{
     height: 100%;
 }
 .bg{
-    background: url(../../assets/images/bg/start-screen-gradient-background.png);
+    background: url(../../../assets/images/bg/start-screen-gradient-background.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -179,30 +179,30 @@ a {
     border-radius: 9px 9px 0px 0px;
 }
 .card__img-one {
-    background: url(../../assets/images/pets/katrine.png);
+    background: url(../../../assets/images/pets/katrine.png);
     width: 270px;
     height: 270px;
 }
 .card__img-two {
-    background: url(../../assets/images/pets/jennifer.png);
+    background: url(../../../assets/images/pets/jennifer.png);
 }
 .card__img-three {
-    background: url(../../assets/images/pets/woody.png);
+    background: url(../../../assets/images/pets/woody.png);
 }
 .card__img-four {
-    background: url(../../assets/images/pets/sophia.png);
+    background: url(../../../assets/images/pets/sophia.png);
 }
 .card__img-five {
-    background: url(../../assets/images/pets/timmy.png);
+    background: url(../../../assets/images/pets/timmy.png);
 }
 .card__img-six {
-    background: url(../../assets/images/pets/charly.png);
+    background: url(../../../assets/images/pets/charly.png);
 }
 .card__img-seven {
-    background: url(../../assets/images/pets/scarlett.png);
+    background: url(../../../assets/images/pets/scarlett.png);
 }
 .card__img-eight {
-    background: url(../../assets/images/pets/freddie.png);
+    background: url(../../../assets/images/pets/freddie.png);
 }
 .card__text {
     font-size: 20px;
@@ -344,7 +344,7 @@ a {
     justify-content: space-between;
 }
 .footer__img {
-    background: url(../../assets/images/footer-puppy.png);
+    background: url(../../../assets/images/footer-puppy.png);
     width: 300px;
     height: 310px;
 }

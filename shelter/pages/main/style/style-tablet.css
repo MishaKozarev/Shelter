@@ -2,6 +2,18 @@
     .card__three {
         display: none;
     }
+    .card__two {
+        margin: 0;
+    }
+    .slider {
+        max-width: 800px;
+    }
+    .slider {
+        max-width: 800px;
+    }
+    .help {
+        height: 779px;
+    }
 }
 @media(max-width:951px){
     /* start FOOTER */
