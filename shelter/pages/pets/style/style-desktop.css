@@ -22,6 +22,7 @@ body{
     justify-content: space-between;
     margin: 0;
     padding: 0;
+
 }
 .colum {
     display: flex;
@@ -66,14 +67,20 @@ a {
 }
 
 /* start HEADER */
+
 .header {
+    position: absolute;
     width: 100%;
-    height: 120px;
+    top: 30px;
 }
 .header__container {
-    padding-top: 31px;
+    max-width: 1240px;
+    padding: 0 20px;
 }
-
+.header__row {
+    max-width: 1200px;
+    padding: 0 20px;
+}
 .logo {
     width: 184px;
 }
@@ -131,14 +138,23 @@ a {
     transition: 1s;
     color: #292929;
 }
+.burger {
+    background: url(../../../assets/icons/Burger.png);
+    width: 30px;
+    height: 22px;
+    display: none;
+}
 /* end HEADER */
 
 
 /* start our_friends */
-.our_friends{
+.our-friends{
     width: 100%;
-    height: 1342px;
+    min-height: 1342px;
     background: #F6F6F6;
+}
+.our-friends__colum {
+    margin: 120px 0 0 0;
 }
 .our-friends__title {
     font-size: 35px;
@@ -282,7 +298,7 @@ a {
 
 
 /* start FOOTER */
-.footer {
+/* .footer {
     height: 350px;
 }
 .footer__row {
@@ -347,5 +363,80 @@ a {
     background: url(../../../assets/images/footer-puppy.png);
     width: 300px;
     height: 310px;
-}
+} */
 /* end FOOTER */
+
+
+.footer {
+    height: 350px;
+}
+.footer__container {
+    max-width: 1240px;
+    padding: 0 20px;
+}
+.footer__row {
+    height: 100%;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 295px;
+    height: 234px;
+}
+.contacts_one {
+    margin: 0 0 59px 0;
+}
+.contacts_two {
+    margin: 0 21px 59px 0;
+}
+.contacts_one .contacts__title{
+    margin-bottom: 39px;
+}
+.contacts_two .contacts__title{
+    margin-bottom: 33px;
+}
+.contacts_one .contacts__item-one{
+    margin-bottom: 39px;
+}
+.contacts_two .contacts__item-one{
+    margin-bottom: 30px;
+}
+.contacts__title {
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+.contacts__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contacts__icon {
+    margin-right: 20px;
+}
+.contacts__text  a{
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    transition: 1s;
+
+}
+.contacts__text:hover a{
+    color: white;
+}
+.contacts__phone {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer__img {
+    width: 25%;
+    max-width: 300px;
+    min-width: 300px;
+}
