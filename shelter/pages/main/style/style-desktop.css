@@ -127,10 +127,31 @@ a {
     pointer-events: none
 }
 .burger {
-    background: url(../../../assets/icons/Burger.png);
+    position: relative;
     width: 30px;
     height: 22px;
+    position: relative;
+	z-index:2;
+	overflow: hidden;
     display: none;
+}
+.line {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #F1CDB3;
+	transition: all 0.5s;
+}
+.line-one {
+    top: 50%;
+}
+.line-two {
+    top: calc(50% - 10px);
+}
+.line-three {
+    top: calc(50% + 10px);
 }
 /* end HEADER */
 
@@ -284,7 +305,8 @@ a {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: 1s;
+    box-sizing: border-box;
+    transition: background 1s ease;
 }
 .slider__btn-prev {
     order: -3;

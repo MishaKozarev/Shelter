@@ -139,10 +139,32 @@ a {
     color: #292929;
 }
 .burger {
-    background: url(../../../assets/icons/Burger.png);
+    position: relative;
     width: 30px;
     height: 22px;
+    position: relative;
+	z-index:2;
+	overflow: hidden;
     display: none;
+}
+.line {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #000000;
+	transition: all 0.5s;
+}
+.line-one {
+    top: 50%;
+}
+.line-two {
+    top: calc(50% - 10px);
+}
+.line-three {
+    top: calc(50% + 10px);
+
 }
 /* end HEADER */
 
@@ -248,12 +270,13 @@ a {
 .slider__btn{
     width: 52px;
     height: 52px;
-    border-radius: 100%;
+    border-radius: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: 1s;
+    box-sizing: border-box;
 }
 .slider__btn h4{
     font-size: 20px;
@@ -295,76 +318,6 @@ a {
 
 }
 /* end our_friends */
-
-
-/* start FOOTER */
-/* .footer {
-    height: 350px;
-}
-.footer__row {
-    height: 100%;
-    align-items: flex-end;
-}
-.contacts {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 295px;
-    height: 234px;
-}
-.contacts_one {
-    margin: 0 0 59px 0;
-}
-.contacts_two {
-    margin: 0 21px 59px 0;
-}
-.contacts_one .contacts__title{
-    margin-bottom: 39px;
-}
-.contacts_two .contacts__title{
-    margin-bottom: 33px;
-}
-.contacts_one .contacts__item-one{
-    margin-bottom: 39px;
-}
-.contacts_two .contacts__item-one{
-    margin-bottom: 30px;
-}
-.contacts__title {
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: #FFFFFF;
-}
-.contacts__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.contacts__icon {
-    margin-right: 20px;
-}
-.contacts__text a{
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    color: #F1CDB3;
-    transition: 1s;
-}
-.contacts__text:hover a{
-    color: white;
-}
-.contacts__phone {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.footer__img {
-    background: url(../../../assets/images/footer-puppy.png);
-    width: 300px;
-    height: 310px;
-} */
-/* end FOOTER */
 
 
 .footer {

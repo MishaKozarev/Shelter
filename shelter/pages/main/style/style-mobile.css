@@ -48,9 +48,6 @@
     .burger {
         display: block;
     }
-
-    /* end HEADER */
-
 }
 @media (max-width: 670px) {
     /* start HELP */
@@ -97,7 +94,7 @@
         margin: 30px 0;
     }
 }
-@media (max-width: 502px) {
+@media (max-width: 499px) {
     .our-friends {
         height: 791px;
     }

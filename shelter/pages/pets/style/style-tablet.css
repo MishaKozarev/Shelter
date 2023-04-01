@@ -46,6 +46,15 @@
         margin: 81px 0 28px;
     }
     .nav {
-        margin: 38px 0 74px;
+        margin: 38px 0 78px;
+    }
+    .footer__row {
+        padding: 0 70px 0 63px;
+    }
+    .footer__container {
+        padding: 0px;
+    }
+    .footer__img {
+        align-items: center;
     }
 }
