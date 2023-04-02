@@ -1,4 +1,4 @@
-@media(max-width:1260px){
+@media(max-width: 1000px){
     .our-friends__grid{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -8,8 +8,14 @@
     .card__seven, .card__eight {
         display: none;
     }
+    .footer__img {
+        min-width: 300px;
+    }
 }
-@media(max-width:951px){
+/* @media(max-width:990px) {
+
+} */
+@media(max-width:990px){
     /* start FOOTER */
     .footer {
         height: 639px;
@@ -32,12 +38,15 @@
         margin: 0;
     }
 }
-@media(max-width:930px){
+@media(max-width:800px){
     .our-friends__grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 40px;
         grid-row-gap: 30px;
+    }
+    .our-friends{
+        max-height: 1733px;
     }
     .header__row {
         padding: 0 10px;

@@ -1,4 +1,4 @@
-@media (max-width: 700px) {
+@media (max-width: 767px) {
     .burger {
         display: block;
     }
@@ -26,25 +26,12 @@
         text-align: center;
         width: 294px;
     }
-}
-@media (max-width: 430px) {
-    .footer__row {
-        height: 100%;
-        padding: 0 10px;
-    }
     .contacts_one {
         margin: 30px 0 12px;
         align-items: center;
-
-    }
-    .contacts_two .contacts__title{
-        margin-bottom: 41px;
-    }
-    .contacts_two .contacts__item-one{
-        margin-bottom: 37px;
     }
 }
-@media (max-width: 620px) {
+@media (max-width: 460px) {
     .our-friends__grid{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -65,6 +52,20 @@
         margin: 38px 0 41px;
     }
 }
+@media (max-width: 430px) {
+    .footer__row {
+        height: 100%;
+        padding: 0 10px;
+    }
+
+    .contacts_two .contacts__title{
+        margin-bottom: 41px;
+    }
+    .contacts_two .contacts__item-one{
+        margin-bottom: 37px;
+    }
+}
+
 
 @media(max-width:410px){
     .slider__btn-1{
