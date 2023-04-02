@@ -237,7 +237,7 @@ a {
 .about__img {
     width: 35.29%;
     max-width: 300px;
-    min-width: 300px;
+    min-width: 270px;
     padding: 0 20px 0 0;
 }
 .about__disc {
@@ -590,6 +590,6 @@ a {
 .footer__img {
     width: 25%;
     max-width: 300px;
-    min-width: 300px;
+    min-width: 270px;
 }
 /* end FOOTER */
