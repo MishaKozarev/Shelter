@@ -41,7 +41,6 @@ function removeScroll() {
 
 linksBurger.forEach(link =>{
     link.addEventListener('click', ()=>{
-        // e.preventDefault();
         menu.classList.remove('active');
         iconBurger.classList.remove('active');
         menuList.classList.remove('active');

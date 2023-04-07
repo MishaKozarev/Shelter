@@ -125,14 +125,10 @@
 
 
 @media(max-width:410px){
-    .slider__btn-1{
-
-    }
     .slider__btn-2{
         margin-left: 10px;
     }
     .slider__btn-3{
-
         margin: 0 10px;
     }
     .slider__btn-4{

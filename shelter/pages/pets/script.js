@@ -5,7 +5,6 @@ const menuList = document.querySelector('.menu__row');
 const body = document.querySelector('body');
 const linksBurger = document.querySelectorAll('.menu__link');
 
-
 iconBurger.addEventListener('click', ()=>{
     removeScroll();
     addMenuList();
@@ -19,7 +18,6 @@ menu.addEventListener('click', ()=>{
     menuList.classList.remove('active');
     body.classList.remove('active');
 });
-
 
 function addMenuList() {
     if (!iconBurger.classList.contains('active')) {
@@ -39,7 +37,6 @@ function removeScroll() {
 
 linksBurger.forEach(link =>{
     link.addEventListener('click', ()=>{
-        // e.preventDefault();
         menu.classList.remove('active');
         iconBurger.classList.remove('active');
         menuList.classList.remove('active');
