@@ -26,7 +26,6 @@ menu.addEventListener('click', ()=>{
 function addMenuList() {
     if (!iconBurger.classList.contains('active')) {
         menuList.classList.add('active');
-
     } else {
         menuList.classList.remove('active');
     }
