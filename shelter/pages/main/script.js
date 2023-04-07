@@ -7,7 +7,6 @@ const menuList = document.querySelector('.menu__row');
 const body = document.querySelector('body');
 const linksBurger = document.querySelectorAll('.menu__link');
 
-
 iconBurger.addEventListener('click', ()=>{
     removeScroll();
     addMenuList();
