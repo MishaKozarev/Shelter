@@ -11,10 +11,12 @@ html {
 }
 body {
     box-sizing: border-box;
-    /* overflow: overlay; */
     margin: 0;
     padding: 0;
     width: 100%;
+}
+body.active {
+    overflow: hidden;
 }
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
@@ -91,9 +93,7 @@ a {
 .logo__title{
     margin: 0;
 }
-.menu {
-    min-width: 443px;
-}
+
 .menu__row {
     padding: 0;
 }
@@ -104,36 +104,29 @@ a {
 .menu__item:last-child{
     margin-right: 0px;
 }
-.menu__item:first-child{
-    border-bottom: 3px solid #F1CDB3;
-}
-.menu__item a{
+.menu__link{
     font-family: "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
     color: #CDCDCD;
-    transition: 1s;
+    transition: .5s;
 }
-.menu__item:hover a{
+.menu__link:hover{
     color: #FAFAFA;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #F1CDB3;
 }
-.menu__item:first-child a{
-    color: #FAFAFA;
-}
-.menu__item:first-child:hover a{
-    cursor: default;
-    pointer-events: none
-}
+
 .burger {
     position: relative;
     width: 30px;
     height: 22px;
-    position: relative;
-	z-index:2;
+	z-index:3;
 	overflow: hidden;
     display: none;
+    cursor: pointer;
 }
 .line {
     position: absolute;

@@ -11,10 +11,12 @@ html {
 }
 body{
     box-sizing: border-box;
-    /* overflow: overlay; */
     margin: 0;
     padding: 0;
     width: 100%;
+}
+body.active {
+    overflow: hidden;
 }
 .row {
     display: flex;
@@ -104,25 +106,13 @@ a {
 .logo__title{
     margin: 0;
 }
-.menu {
-    max-width: 443px;
-}
+
 .menu__item {
     margin-right: 35px;
     list-style-type: none;
 }
 .menu__item:last-child{
     margin-right: 0px;
-}
-.active{
-    border-bottom: 3px solid #F1CDB3;
-}
-.active a{
-    color: #292929;
-}
-.active:hover a{
-    cursor: default;
-    pointer-events: none
 }
 
 .menu__link {
@@ -133,19 +123,21 @@ a {
     line-height: 160%;
     text-decoration: none;
     color: #545454;
+    transition: .5s;
 }
 .menu__link:hover {
-    transition: 1s;
     color: #292929;
+    border-bottom: 3px solid #F1CDB3;
+    padding-bottom: 3px;
 }
 .burger {
     position: relative;
     width: 30px;
     height: 22px;
-    position: relative;
-	z-index:2;
+	z-index:3;
 	overflow: hidden;
     display: none;
+    cursor: pointer;
 }
 .line {
     position: absolute;
