@@ -265,6 +265,7 @@ a {
     width: 100%;
     height: 877px;
     background: #F6F6F6;
+    position: relative;
 }
 .our-friends__colum {
     display: flex;
@@ -317,6 +318,7 @@ a {
     border-radius: 9px;
     cursor: pointer;
     transition: 1s;
+    z-index: 2;
 }
 .card:hover{
     background: white;
@@ -326,6 +328,9 @@ a {
 .card:hover .card__btn{
     border: none;
     background: #FDDCC4;
+}
+.card__four, .card__five, .card__six, .card__seven, .card__eight {
+    display: none;
 }
 .card__two {
     margin: 0 38px;
@@ -386,6 +391,117 @@ a {
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #292929;
+}
+.popup__body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* right: -100%; */
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.6);
+    transition: 1s;
+    cursor: pointer;
+    z-index: -1;
+}
+.popup__body.active{
+    /* right: 0%; */
+    opacity: 1;
+    z-index: 2;
+    transition: 1s;
+}
+.popup {
+    position: fixed;
+    width: 900px;
+    height: 500px;
+    background: #FAFAFA;
+    border-radius: 9px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index: 3;
+    visibility: hidden;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.popup.active {
+    visibility: visible;
+}
+
+.popup__btn {
+    position: fixed;
+    top: -52px;
+    right: -52px;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    cursor: pointer;
+    transition: 1s;
+    /* opacity: 0; */
+}
+.popup__btn:hover {
+    background: #FDDCC4;
+}
+.popup__btn-closed{
+    width: 12px;
+    height: 12px;
+}
+.popup__container {
+    display: flex;
+}
+.popup__img {
+    border-radius: 9px;
+    box-sizing: border-box;
+    width: 500px;
+    height: 500px;
+}
+.info {
+    padding: 50px 20px 88px 29px;
+}
+.name {
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+}
+.type-breed {
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    margin-bottom: 40px;
+}
+.point::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50px;
+    background: #F1CDB3;
+    margin: 0 10px 2px 0;
+}
+.description {
+    margin-bottom: 40px;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+.age, .inoculations, .diseases, .parasites {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+}
+.info-text {
+    font-weight: 400;
+}
+.point {
+    font-weight: 700;
 }
 
 /* end OUR-FRIENDS */

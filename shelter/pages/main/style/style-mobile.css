@@ -1,3 +1,27 @@
+/* start Popup */
+@media(max-width:767px){
+    .popup {
+        width: 240px;
+        height: 341px;
+    }
+    .popup__img {
+        display: none;
+    }
+    .info {
+        padding: 0 10px 10px 10px;
+    }
+    .type-breed {
+        margin-bottom: 20px;
+        letter-spacing: 0.04em;
+
+    }
+    .description {
+        margin-bottom: 24px;
+    }
+}
+/* end popup */
+
+
 @media (max-width: 767px) {
     .menu {
         position: fixed;
@@ -7,7 +31,7 @@
         opacity: 0;
         height: 100%;
         width: 100%;
-        z-index: 1;
+        z-index: -1;
         background: rgb(0, 0, 0, 0.7);
         transition: 1s;
         cursor: pointer;
