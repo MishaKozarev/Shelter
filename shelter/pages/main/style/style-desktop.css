@@ -118,7 +118,17 @@ a {
     padding-bottom: 3px;
     border-bottom: 3px solid #F1CDB3;
 }
-
+.link-active{
+    color: #FAFAFA;
+    border-bottom: 3px solid #F1CDB3;
+    cursor: default;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    transition: .5s;
+}
 .burger {
     position: relative;
     width: 30px;
@@ -279,17 +289,63 @@ a {
     text-align: center;
     letter-spacing: 0.06em;
     color: #545454;
-    margin-top: 80px;
+    margin: 80px 0 59px 0;
 }
 .slider {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 435px;
-    margin-top: 59px;
+    gap: 53px;
 }
+.slider__container {
+    width: 990px;
+    overflow: hidden;
+    padding: 35px;
+    margin: -35px;
+}
+.slider__content {
+    position: relative;
+    left: -1080px;
+    display: flex;
+    width: 3150px;
+    justify-content: center;
+    gap: 90px;
+    transition: none;
+}
+
+/* .slider__content.slide-left {
+    transform: translateX(1080px);
+    transition: transform 1s ease-in-out;
+}
+.slider__content.slide-right {
+    transform: translateX(-1080px);
+    transition: transform 1s ease-in-out;
+} */
+
+@keyframes move-right {
+    from {left: -1080px;}
+    to {left: -2160px;}
+}
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 2s;
+}
+@keyframes move-left {
+    from {left: -1080px;}
+    to {left: 0px;}
+}
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 2s;
+}
+
+
+.prev-page, .current-page, .next-page {
+    display: flex;
+    gap: 90px;
+    width: 990px;
+}
+
 .slider__btn {
     width: 52px;
     height: 52px;
@@ -302,9 +358,6 @@ a {
     box-sizing: border-box;
     transition: background 1s ease;
 }
-.slider__btn-prev {
-    order: -3;
-}
 .slider__btn:hover {
     background: #F1CDB3;
 }
@@ -316,9 +369,10 @@ a {
     align-items: center;
     background: #FAFAFA;
     border-radius: 9px;
+    flex-shrink: 0;
     cursor: pointer;
     transition: 1s;
-    z-index: 2;
+    z-index: 1;
 }
 .card:hover{
     background: white;
@@ -329,17 +383,10 @@ a {
     border: none;
     background: #FDDCC4;
 }
-.card__four, .card__five, .card__six, .card__seven, .card__eight {
-    display: none;
-}
-.card__two {
-    margin: 0 38px;
-}
 .card__img {
     width: 270px;
     height: 270px;
     border-radius: 9px 9px 0px 0px;
-
 }
 .card__img-one {
     background: url(../../../assets/images/pets/katrine.png);
@@ -406,7 +453,6 @@ a {
     z-index: -1;
 }
 .popup__body.active{
-    /* right: 0%; */
     opacity: 1;
     z-index: 2;
     transition: 1s;
@@ -442,7 +488,6 @@ a {
     z-index: 3;
     cursor: pointer;
     transition: 1s;
-    /* opacity: 0; */
 }
 .popup__btn:hover {
     background: #FDDCC4;

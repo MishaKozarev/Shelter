@@ -63,7 +63,7 @@
         font-size: 32px;
         line-height: 160%;
     }
-    .menu__link{
+    .menu__link, .link-active{
         font-size: 32px;
         line-height: 160%;
         color: #CDCDCD

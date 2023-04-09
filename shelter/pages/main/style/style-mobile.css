@@ -1,3 +1,21 @@
+@media(max-width:767px){
+    .card__two {
+        display: none;
+    }
+    .slider__container {
+        width: 290px;
+        margin: 0;
+        padding: 0;
+    }
+    .slider__content {
+        left: -280px;
+        width: 850px;
+        gap: 20px;
+    }
+
+}
+
+
 /* start Popup */
 @media(max-width:767px){
     .popup {
@@ -65,7 +83,7 @@
         font-size: 32px;
         line-height: 160%;
     }
-    .menu__link{
+    .menu__link, .link-active{
         font-size: 32px;
         line-height: 160%;
     }
@@ -77,29 +95,6 @@
         transform: rotate(90deg);
     }
 
-
-
-    .card__two {
-        display: none;
-    }
-    .card {
-        margin: 0;
-    }
-    .slider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 435px;
-        max-width: 500px;
-    }
-    .slider__btn-next {
-        margin: 10px 0 0 30px;
-        order: 0;
-    }
-    .slider__btn-prev {
-        margin: 10px 30px 0 0;
-    }
     .footer__img {
         min-width: 260px;
     }
@@ -179,6 +174,38 @@
         margin: 30px 0;
     }
 }
+@media (max-width: 580px) {
+    .slider {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 20px;
+        column-gap: 80px;
+    }
+    .slider__btn-prev {
+        order: 2;
+        position: relative;
+        left: -65px;
+    }
+    .slider__btn-next {
+        order: 2;
+        position: absolute;
+        bottom: 0;
+        right: 42px
+    }
+    .slider__content {
+        left: -280px;
+        width: 850px;
+        gap: 20px;
+    }
+    .our-friends__btn {
+        margin-top: 42px;
+    }
+}
+
+
+
+
+
 @media (max-width: 499px) {
     .our-friends {
         height: 791px;
@@ -191,14 +218,7 @@
         font-size: 25px;
         margin-top: 42px;
     }
-    .slider {
-        margin: 0;
-        width: 80.09%;
-        height: 507px;
-    }
-    .slider__btn-prev {
-        order: 0;
-    }
+
 }
 @media (max-width: 430px) {
     .header__row {
@@ -253,18 +273,6 @@
     }
     .our-friends__title {
        margin: 42px 0 41px;
-    }
-    .our-friends__btn {
-        margin-top: 42px;
-    }
-    .slider__btn {
-        margin: 20px 0 0 0;
-    }
-    .slider__btn-prev {
-        margin-right: 40px;
-    }
-    .slider__btn-next {
-        margin-left: 40px;
     }
     .item img {
         height: 50px;

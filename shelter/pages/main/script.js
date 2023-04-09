@@ -96,7 +96,7 @@ const menu = document.querySelector('.menu');
 const iconBurger = document.querySelector('.burger');
 const menuList = document.querySelector('.menu__row');
 const body = document.querySelector('body');
-const linksBurger = document.querySelectorAll('.menu__link');
+const linksBurger = document.querySelectorAll('.burger-link');
 
 iconBurger.addEventListener('click', ()=>{
     removeScroll();
@@ -154,69 +154,141 @@ const card7 = document.querySelector('.card__seven');
 const card8 = document.querySelector('.card__eight');
 const popupImg = document.querySelector('.popup__img');
 const namePets = document.querySelector('.name');
-// const type = document.querySelector('.type');
-// const breed = document.querySelector('.breed');
 const description = document.querySelector('.description');
 const age = document.querySelector('.age');
 const inoculations = document.querySelector('.inoculations');
 const diseases = document.querySelector('.diseases');
 const parasites = document.querySelector('.parasites');
 const typeBreed = document.querySelector('.type-breed');
+let i = 0;
 
+
+
+
+// Slider
+
+const btnLeft = document.querySelector('.slider__btn-prev')
+const btnRight = document.querySelector('.slider__btn-next')
+const CAROUSEL = document.querySelector('.slider__content')
+const pageLeft = document.querySelector('.prev-page')
+const pageCurrent = document.querySelector('.current-page')
+const pageRight = document.querySelector('.next-page')
+
+
+const moveRight = () => {
+    CAROUSEL.classList.add('transition-right');
+}
+const moveLeft = () => {
+    CAROUSEL.classList.add('transition-left');
+}
+
+
+// const createCardTemplate = () => {
+//     const card = document.createElement("div");
+//     card.classList.add("card");
+//     return card;
+//   }
+// changedItem.innerHTML = "";
+//   for (let i = 0; i < 3; i++) {
+//     const card = createCardTemplate();
+//     card.innerText = Math.floor(Math.random() * 8);
+//     changedItem.appendChild(card);
+//   }
+
+CAROUSEL.addEventListener('animationend', (animationEvent)=>{
+    if (animationEvent.animationName === 'move-left') {
+        CAROUSEL.classList.remove('transition-left');
+        const leftItems = pageLeft.innerHTML;
+        pageCurrent.innerHTML = leftItems;
+
+        // const car1 = createCardTemplate();
+        // car1.innerText = Math.floor(Math.random() * 8)
+
+        // const car2 = createCardTemplate();
+        // car2.innerText = Math.floor(Math.random() * 8)
+
+        // const car3 = createCardTemplate();
+        // car3.innerText = Math.floor(Math.random() * 8)
+
+        pageLeft.innerHTML = '';
+        pageLeft.appendChild(card7)
+        pageLeft.appendChild(card8)
+        pageLeft.appendChild(card1)
+
+    } else {
+        CAROUSEL.classList.remove('transition-right');
+        const rightItems = pageRight.innerHTML;
+        pageCurrent.innerHTML = rightItems
+
+        pageRight.innerHTML = '';
+        pageRight.appendChild(card4)
+        pageRight.appendChild(card5)
+        pageRight.appendChild(card6)
+
+    }
+});
+btnRight.addEventListener('click', moveRight);
+btnLeft.addEventListener('click', moveLeft);
 
 
 card1.addEventListener('click', ()=>{
     removeScroll();
     openPopup()
-    createPopupContent0()
+    createPopupContent()
 
 });
 card2.addEventListener('click', ()=>{
     removeScroll();
     openPopup()
-    createPopupContent1()
+    i = 1
+    createPopupContent()
 
 });
 card3.addEventListener('click', ()=>{
     removeScroll();
     openPopup()
-    createPopupContent2()
+    i = 2
+    createPopupContent()
 
 });
 card4.addEventListener('click', ()=>{
     removeScroll();
     openPopup()
-    createPopupContent3()
+    i = 3
+    createPopupContent()
 
 });
 card5.addEventListener('click', ()=>{
     removeScroll();
     openPopup()
-    createPopupContent4()
+    i = 4
+    createPopupContent()
 
 });
 card6.addEventListener('click', ()=>{
     removeScroll();
     openPopup()
-    createPopupContent5()
+    i = 5
+    createPopupContent()
 
 });
 card7.addEventListener('click', ()=>{
     removeScroll();
     openPopup()
-    createPopupContent6()
+    i = 6
+    createPopupContent()
 
 });
 card8.addEventListener('click', ()=>{
     removeScroll();
     openPopup()
-    createPopupContent7()
+    i = 7
+    createPopupContent()
 
 });
 
 
-function createPopupContent0() {
-    let i = 0;
+function createPopupContent() {
     popupImg.src = petsList[i].img
     namePets.textContent = petsList[i].name
     typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
@@ -226,83 +298,6 @@ function createPopupContent0() {
     diseases.textContent = ` ${petsList[i].diseases}`
     parasites.textContent = ` ${petsList[i].parasites}`
 
-}
-function createPopupContent1() {
-    let i = 1;
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
-}
-function createPopupContent2() {
-    let i = 2;
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
-}
-function createPopupContent3() {
-    let i = 3;
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
-}
-function createPopupContent4() {
-    let i = 4;
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
-}
-function createPopupContent5() {
-    let i = 5;
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
-}
-function createPopupContent6() {
-    let i = 6;
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
-}
-function createPopupContent7() {
-    let i = 7;
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
 }
 
 function openPopup() {
@@ -331,3 +326,4 @@ function removePopupScroll() {
         body.classList.remove('active');
     }
 }
+
