@@ -10,7 +10,9 @@ const petsList =
         "age": "6 months",
         "inoculations": ["panleukopenia"],
         "diseases": ["none"],
-        "parasites": ["none"]
+        "parasites": ["none"],
+        "button": "Learn more"
+
     },
     {
         "name": "Jennifer",
@@ -91,27 +93,35 @@ const petsList =
         "parasites": ["none"]
     }
   ]
-/*Бургер меню*/
+
+//======================================================
+//================== BURGER =============================
+//======================================================
 const menu = document.querySelector('.menu');
 const iconBurger = document.querySelector('.burger');
 const menuList = document.querySelector('.menu__row');
 const body = document.querySelector('body');
 const linksBurger = document.querySelectorAll('.burger-link');
 
-iconBurger.addEventListener('click', ()=>{
+
+function openBurger () {
     removeScroll();
     addMenuList();
     menu.classList.toggle('active');
     iconBurger.classList.toggle('active');
-});
+}
 
-menu.addEventListener('click', ()=>{
+function closeBurger () {
     iconBurger.classList.remove('active');
     menu.classList.remove('active');
     menuList.classList.remove('active');
     body.classList.remove('active');
-});
-
+}
+iconBurger.addEventListener('click', (openBurger));
+menu.addEventListener('click', closeBurger);
+linksBurger.forEach(link =>{
+    link.addEventListener('click', (closeBurger));
+})
 
 function addMenuList() {
     if (!iconBurger.classList.contains('active')) {
@@ -128,30 +138,12 @@ function removeScroll() {
     }
 }
 
-linksBurger.forEach(link =>{
-    link.addEventListener('click', ()=>{
-        menu.classList.remove('active');
-        iconBurger.classList.remove('active');
-        menuList.classList.remove('active');
-        body.classList.remove('active');
-    });
-  })
-
-
-
-//Popup
+//======================================================
+// ================== POPUP ===========================
+//======================================================
 const popupBody = document.querySelector('.popup__body');
 const popupBtn = document.querySelector('.popup__btn');
 const popup = document.querySelector('.popup');
-const cards = document.querySelectorAll('.card');
-const card1 = document.querySelector('.card__one');
-const card2 = document.querySelector('.card__two');
-const card3 = document.querySelector('.card__three');
-const card4 = document.querySelector('.card__four');
-const card5 = document.querySelector('.card__five');
-const card6 = document.querySelector('.card__six');
-const card7 = document.querySelector('.card__seven');
-const card8 = document.querySelector('.card__eight');
 const popupImg = document.querySelector('.popup__img');
 const namePets = document.querySelector('.name');
 const description = document.querySelector('.description');
@@ -160,150 +152,6 @@ const inoculations = document.querySelector('.inoculations');
 const diseases = document.querySelector('.diseases');
 const parasites = document.querySelector('.parasites');
 const typeBreed = document.querySelector('.type-breed');
-let i = 0;
-
-
-
-
-// Slider
-
-const btnLeft = document.querySelector('.slider__btn-prev')
-const btnRight = document.querySelector('.slider__btn-next')
-const CAROUSEL = document.querySelector('.slider__content')
-const pageLeft = document.querySelector('.prev-page')
-const pageCurrent = document.querySelector('.current-page')
-const pageRight = document.querySelector('.next-page')
-
-
-const moveRight = () => {
-    CAROUSEL.classList.add('transition-right');
-}
-const moveLeft = () => {
-    CAROUSEL.classList.add('transition-left');
-}
-
-
-// const createCardTemplate = () => {
-//     const card = document.createElement("div");
-//     card.classList.add("card");
-//     return card;
-//   }
-// changedItem.innerHTML = "";
-//   for (let i = 0; i < 3; i++) {
-//     const card = createCardTemplate();
-//     card.innerText = Math.floor(Math.random() * 8);
-//     changedItem.appendChild(card);
-//   }
-
-CAROUSEL.addEventListener('animationend', (animationEvent)=>{
-    if (animationEvent.animationName === 'move-left') {
-        CAROUSEL.classList.remove('transition-left');
-        const leftItems = pageLeft.innerHTML;
-        pageCurrent.innerHTML = leftItems;
-
-        // const car1 = createCardTemplate();
-        // car1.innerText = Math.floor(Math.random() * 8)
-
-        // const car2 = createCardTemplate();
-        // car2.innerText = Math.floor(Math.random() * 8)
-
-        // const car3 = createCardTemplate();
-        // car3.innerText = Math.floor(Math.random() * 8)
-
-        pageLeft.innerHTML = '';
-        pageLeft.appendChild(card7)
-        pageLeft.appendChild(card8)
-        pageLeft.appendChild(card1)
-
-    } else {
-        CAROUSEL.classList.remove('transition-right');
-        const rightItems = pageRight.innerHTML;
-        pageCurrent.innerHTML = rightItems
-
-        pageRight.innerHTML = '';
-        pageRight.appendChild(card4)
-        pageRight.appendChild(card5)
-        pageRight.appendChild(card6)
-
-    }
-});
-btnRight.addEventListener('click', moveRight);
-btnLeft.addEventListener('click', moveLeft);
-
-
-card1.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    createPopupContent()
-
-});
-card2.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 1
-    createPopupContent()
-
-});
-card3.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 2
-    createPopupContent()
-
-});
-card4.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 3
-    createPopupContent()
-
-});
-card5.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 4
-    createPopupContent()
-
-});
-card6.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 5
-    createPopupContent()
-
-});
-card7.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 6
-    createPopupContent()
-
-});
-card8.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 7
-    createPopupContent()
-
-});
-
-
-function createPopupContent() {
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
-
-}
-
-function openPopup() {
-    popup.classList.add('active');
-    popupBody.classList.add('active');
-}
 
 popupBtn.addEventListener('click', ()=>{
     removeScroll();
@@ -326,4 +174,197 @@ function removePopupScroll() {
         body.classList.remove('active');
     }
 }
+
+
+//======================================================
+// ================== SLIDER ===========================
+//======================================================
+const btnLeft = document.querySelector('.slider__btn-prev')
+const btnRight = document.querySelector('.slider__btn-next')
+const CAROUSEL = document.querySelector('.slider__content')
+const leftSlide = document.querySelector('.prev-page')
+const centerSlide = document.querySelector('.current-page')
+const rightSlide = document.querySelector('.next-page')
+const mediaTablet = window.matchMedia("(max-width: 1240px)");
+const mediaMobile = window.matchMedia("(max-width: 767px)");
+
+
+// ------------- Creat Card -----------------------
+const createCardTemplate = (src, name, num) => {
+    const card = document.createElement("div");
+    const imgCard = document.createElement("img");
+    const cardText = document.createElement("h3");
+    const cardBtn = document.createElement("button");
+    card.classList.add("card");
+    imgCard.classList.add("card__img");
+    imgCard.src = src;
+    cardText.classList.add("card__text");
+    cardBtn.classList.add("card__btn");
+    cardText.textContent = name;
+    cardBtn.textContent = `${petsList[0].button}`
+    card.append(imgCard, cardText, cardBtn);
+// ------------ Open popup ----------------
+    function openPopup () {
+        popup.classList.add('active');
+        popupBody.classList.add('active');
+        removePopupScroll()
+        popupImg.src = petsList[num].img
+        namePets.textContent = petsList[num].name
+        typeBreed.textContent = `${petsList[num].type} - ${petsList[num].breed}`
+        description.textContent = petsList[num].description
+        age.textContent = ` ${petsList[num].age}`
+        inoculations.textContent = ` ${petsList[num].inoculations}`
+        diseases.textContent = ` ${petsList[num].diseases}`
+        parasites.textContent = ` ${petsList[num].parasites}`
+    }
+    card.addEventListener('click', openPopup)
+
+return card;
+}
+
+
+//--------------------Rundom array------------------------
+let centerArr = [];
+function creatRandomCenterArr() {
+  let length = 3;
+  if (mediaTablet.matches) {
+    length = 2;
+  }
+  if (mediaMobile.matches) {
+    length = 1;
+  }
+  while (centerArr.length < length) {
+    let num = Math.floor(Math.random() * 8);
+    if (centerArr.indexOf(num) === -1) {
+        centerArr.push(num);
+    }
+  }
+}
+creatRandomCenterArr();
+
+let leftArr = [];
+function creatRandomLeftArr() {
+  let length = 3;
+  if (mediaTablet.matches) {
+    length = 2;
+  }
+  if (mediaMobile.matches) {
+    length = 1;
+  }
+  while (leftArr.length < length) {
+    let num = Math.floor(Math.random() * 8);
+    if (centerArr.indexOf(num) === -1 && leftArr.indexOf(num) === -1) {
+        leftArr.push(num);
+    }
+  }
+}
+creatRandomLeftArr();
+
+let rightArr = [];
+function creatRandomRightArr() {
+  let length = 3;
+  if (mediaTablet.matches) {
+    length = 2;
+  }
+  if (mediaMobile.matches) {
+    length = 1;
+  }
+  while (rightArr.length < length) {
+    let num = Math.floor(Math.random() * 8);
+    if (
+        centerArr.indexOf(num) === -1 && rightArr.indexOf(num) === -1
+    ) {
+        rightArr.push(num);
+    }
+  }
+}
+creatRandomRightArr();
+
+
+// ------Creat slides and add on the slider-------------
+
+function createCenterSlide() {
+    centerSlide.innerHTML = "";
+    for (let i = 0; i < centerArr.length; i++) {
+      let petImg = `${petsList[centerArr[i]].img}`
+      let petName = `${petsList[centerArr[i]].name}`
+      let num = centerArr[i]
+      let card = createCardTemplate(petImg, petName, num);
+      centerSlide.appendChild(card);
+    }
+  }
+  createCenterSlide();
+
+  function createRightItems() {
+    rightSlide.innerHTML = "";
+    for (let i = 0; i < rightArr.length; i++) {
+      let petImg = `${petsList[rightArr[i]].img}`
+      let petName = `${petsList[rightArr[i]].name}`
+      let num = rightArr[i]
+      let card = createCardTemplate(petImg, petName, num);
+      rightSlide.appendChild(card);
+    }
+  }
+  createRightItems();
+
+  function createLeftSlide() {
+    leftSlide.innerHTML = "";
+    for (let i = 0; i < leftArr.length; i++) {
+      let petImg = `${petsList[leftArr[i]].img}`
+      let petName = `${petsList[leftArr[i]].name}`
+      let num = leftArr[i]
+      let card = createCardTemplate(petImg, petName, num);
+      leftSlide.appendChild(card);
+    }
+  }
+  createLeftSlide();
+
+
+  //------------------- CARUSEL (-1080/+1080)---------------------
+const moveRight = () => {
+    CAROUSEL.classList.add('transition-right');
+};
+const moveLeft = () => {
+    CAROUSEL.classList.add('transition-left');
+};
+
+btnRight.addEventListener('click', moveRight);
+btnLeft.addEventListener('click', moveLeft);
+
+
+  //------------------- ANIMATION -------------
+CAROUSEL.addEventListener('animationend', (animationEvent)=>{
+    if (animationEvent.animationName === 'move-left') {
+        CAROUSEL.classList.remove('transition-left');
+        rightArr = centerArr;
+        centerArr = leftArr;
+        leftArr = [];
+        creatRandomLeftArr();
+    } else {
+        CAROUSEL.classList.remove('transition-right');
+        leftArr = centerArr;
+        centerArr = rightArr;
+        rightArr = [];
+        creatRandomRightArr();
+    }
+    createCenterSlide();
+    createRightItems();
+    createLeftSlide();
+});
+// ---------------------  RESIZE ---------------------
+window.addEventListener("resize", () => {
+    centerArr = [];
+    leftArr = [];
+    rightArr = [];
+    creatRandomCenterArr();
+    creatRandomLeftArr();
+    creatRandomRightArr();
+    createCenterSlide();
+    createLeftSlide();
+    createRightItems();
+});
+
+
+
+
 

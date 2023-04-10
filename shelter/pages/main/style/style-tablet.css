@@ -1,7 +1,7 @@
 
 @media(max-width:1240px){
     .slider {
-        gap: 12px;
+        gap: 20px;
     }
     .slider__container {
         width: 580px;
@@ -16,6 +16,22 @@
     }
     .card__three {
         display: none;
+    }
+    @keyframes move-right {
+        from {left: -620px;}
+        to {left: -1240px;}
+    }
+    .transition-right {
+        animation-name: move-right;
+        animation-duration: 2s;
+    }
+    @keyframes move-left {
+        from {left: -620px;}
+        to {left: 0px;}
+    }
+    .transition-left {
+        animation-name: move-left;
+        animation-duration: 2s;
     }
 }
 

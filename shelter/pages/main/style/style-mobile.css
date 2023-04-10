@@ -12,7 +12,22 @@
         width: 850px;
         gap: 20px;
     }
-
+    @keyframes move-right {
+        from {left: -280px;}
+        to {left: -560px;}
+    }
+    .transition-right {
+        animation-name: move-right;
+        animation-duration: 2s;
+    }
+    @keyframes move-left {
+        from {left: -280px;}
+        to {left: 0px;}
+    }
+    .transition-left {
+        animation-name: move-left;
+        animation-duration: 2s;
+    }
 }
 
 
