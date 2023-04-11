@@ -8,20 +8,20 @@
         padding: 0;
     }
     .slider__content {
-        left: -280px;
+        left: -290px;
         width: 850px;
         gap: 20px;
     }
     @keyframes move-right {
-        from {left: -280px;}
-        to {left: -560px;}
+        from {left: -290px;}
+        to {left: -580px;}
     }
     .transition-right {
         animation-name: move-right;
         animation-duration: .5s;
     }
     @keyframes move-left {
-        from {left: -280px;}
+        from {left: -290px;}
         to {left: 0px;}
     }
     .transition-left {
