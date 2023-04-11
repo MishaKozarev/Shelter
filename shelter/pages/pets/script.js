@@ -136,19 +136,13 @@ linksBurger.forEach(link =>{
     });
   })
 
-  //Popup
+
+//======================================================
+// ================== POPUP ===========================
+//======================================================
 const popupBody = document.querySelector('.popup__body');
 const popupBtn = document.querySelector('.popup__btn');
 const popup = document.querySelector('.popup');
-const cards = document.querySelectorAll('.card');
-const card1 = document.querySelector('.card__one');
-const card2 = document.querySelector('.card__two');
-const card3 = document.querySelector('.card__three');
-const card4 = document.querySelector('.card__four');
-const card5 = document.querySelector('.card__five');
-const card6 = document.querySelector('.card__six');
-const card7 = document.querySelector('.card__seven');
-const card8 = document.querySelector('.card__eight');
 const popupImg = document.querySelector('.popup__img');
 const namePets = document.querySelector('.name');
 const description = document.querySelector('.description');
@@ -157,81 +151,6 @@ const inoculations = document.querySelector('.inoculations');
 const diseases = document.querySelector('.diseases');
 const parasites = document.querySelector('.parasites');
 const typeBreed = document.querySelector('.type-breed');
-let i = 0;
-
-card1.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    createPopupContent()
-
-});
-card2.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 1
-    createPopupContent()
-
-});
-card3.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 2
-    createPopupContent()
-
-});
-card4.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 3
-    createPopupContent()
-
-});
-card5.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 4
-    createPopupContent()
-
-});
-card6.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 5
-    createPopupContent()
-
-});
-card7.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 6
-    createPopupContent()
-
-});
-card8.addEventListener('click', ()=>{
-    removeScroll();
-    openPopup()
-    i = 7
-    createPopupContent()
-
-});
-
-
-function createPopupContent() {
-    popupImg.src = petsList[i].img
-    namePets.textContent = petsList[i].name
-    typeBreed.textContent = `${petsList[i].type} - ${petsList[i].breed}`
-    description.textContent = petsList[i].description
-    age.textContent = ` ${petsList[i].age}`
-    inoculations.textContent = ` ${petsList[i].inoculations}`
-    diseases.textContent = ` ${petsList[i].diseases}`
-    parasites.textContent = ` ${petsList[i].parasites}`
-
-}
-
-function openPopup() {
-    popup.classList.add('active');
-    popupBody.classList.add('active');
-}
 
 popupBtn.addEventListener('click', ()=>{
     removeScroll();
@@ -254,3 +173,89 @@ function removePopupScroll() {
         body.classList.remove('active');
     }
 }
+
+
+//======================================================
+// ================== PAGINATION ===========================
+//======================================================
+const PAGINATION = document.querySelector('.pagination__content')
+const activeItems = document.querySelector('.item-center');
+const leftItems = document.querySelector('.item-left');
+const rightItems = document.querySelector('.item-right');
+
+
+// ------------- Creat Card -----------------------
+const createCardTemplate = (src, name, num) => {
+    const card = document.createElement("div");
+    const imgCard = document.createElement("img");
+    const cardText = document.createElement("h3");
+    const cardBtn = document.createElement("button");
+    card.classList.add("card");
+    imgCard.classList.add("card__img");
+    imgCard.src = src;
+    cardText.classList.add("card__text");
+    cardBtn.classList.add("card__btn");
+    cardText.textContent = name;
+    cardBtn.textContent = `${petsList[0].button}`
+    card.append(imgCard, cardText, cardBtn);
+    activeItems.append(card);
+
+// ------------ Open popup ----------------
+    function openPopup () {
+        let num = 0
+        popup.classList.add('active');
+        popupBody.classList.add('active');
+        removePopupScroll()
+        popupImg.src = petsList[num].img
+        namePets.textContent = petsList[num].name
+        typeBreed.textContent = `${petsList[num].type} - ${petsList[num].breed}`
+        description.textContent = petsList[num].description
+        age.textContent = ` ${petsList[num].age}`
+        inoculations.textContent = ` ${petsList[num].inoculations}`
+        diseases.textContent = ` ${petsList[num].diseases}`
+        parasites.textContent = ` ${petsList[num].parasites}`
+    }
+    card.addEventListener('click', openPopup)
+return card;
+}
+
+//------------------- CREAT SLIDER---------------------
+
+function createActiveItems() {
+    activeItems.innerHTML = "";
+    for (let i = 0; i < 8; i++) {
+      let card = createCardTemplate(
+        `${petsList[[i]].img}`,
+        `${petsList[[i]].name}`,
+        [i]
+      );
+      activeItems.appendChild(card);
+    }
+  }
+  createActiveItems();
+
+  function createRightItems() {
+    rightItems.innerHTML = "";
+    for (let i = 0; i < 8; i++) {
+      let card = createCardTemplate(
+        `${petsList[[i]].img}`,
+        `${petsList[[i]].name}`
+      );
+      rightItems.appendChild(card);
+    }
+  }
+  createRightItems();
+
+  function createLeftItems() {
+    leftItems.innerHTML = "";
+    for (let i = 0; i < 8; i++) {
+      let card = createCardTemplate(
+        `${petsList[[i]].img}`,
+        `${petsList[[i]].name}`
+      );
+      leftItems.appendChild(card);
+    }
+  }
+  createLeftItems();
+
+

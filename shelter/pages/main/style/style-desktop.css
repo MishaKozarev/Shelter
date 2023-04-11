@@ -14,6 +14,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    overflow: overlay;
 }
 body.active {
     overflow: hidden;
@@ -114,6 +115,9 @@ a {
     transition: .5s;
 }
 .menu__link:hover{
+    color: #FAFAFA;
+}
+.menu__link:active{
     color: #FAFAFA;
     padding-bottom: 3px;
     border-bottom: 3px solid #F1CDB3;

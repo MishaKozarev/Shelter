@@ -223,7 +223,7 @@ return card;
 }
 
 
-//--------------------Rundom array------------------------
+//--------------------RANDOM ARRAY------------------------
 let centerArr = [];
 function creatRandomCenterArr() {
   let length = 3;
@@ -291,7 +291,7 @@ function createCenterSlide() {
       let num = centerArr[i]
       let card = createCardTemplate(petImg, petName, num);
       centerSlide.appendChild(card);
-    }
+    } 
   }
   createCenterSlide();
 
@@ -320,7 +320,7 @@ function createCenterSlide() {
   createLeftSlide();
 
 
-  //------------------- CARUSEL (-1080/+1080)---------------------
+//------------------- CARUSEL (-1080/+1080)---------------------
 const moveRight = () => {
     CAROUSEL.classList.add('transition-right');
 };
