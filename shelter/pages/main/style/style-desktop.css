@@ -322,7 +322,7 @@ a {
 }
 .transition-right {
     animation-name: move-right;
-    animation-duration: 2s;
+    animation-duration: .5s;
 }
 @keyframes move-left {
     from {left: -1080px;}
@@ -330,7 +330,7 @@ a {
 }
 .transition-left {
     animation-name: move-left;
-    animation-duration: 2s;
+    animation-duration: .5s;
 }
 
 
@@ -382,30 +382,6 @@ a {
     height: 270px;
     border-radius: 9px 9px 0px 0px;
 
-}
-.card__img--one {
-    background: url(../../../assets/images/pets/katrine.png);
-}
-.card__img--wo {
-    background: url(../../../assets/images/pets/jennifer.png);
-}
-.card__img--three {
-    background: url(../../../assets/images/pets/woody.png);
-}
-.card__img--four {
-    background: url(../../../assets/images/pets/woody.png);
-}
-.card__img-five {
-    background: url(../../../assets/images/pets/woody.png);
-}
-.card__img-six {
-    background: url(../../../assets/images/pets/woody.png);
-}
-.card__img-seven {
-    background: url(../../../assets/images/pets/woody.png);
-}
-.card__img-eight {
-    background: url(../../../assets/images/pets/woody.png);
 }
 .card__text {
     font-size: 20px;

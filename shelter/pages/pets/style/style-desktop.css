@@ -214,7 +214,7 @@ a {
 }
 .transition-right {
     animation-name: move-right;
-    animation-duration: 2s;
+    animation-duration: .5s;
 }
 @keyframes move-left {
     from {left: -1290px;}
@@ -222,7 +222,7 @@ a {
 }
 .transition-left {
     animation-name: move-left;
-    animation-duration: 2s;
+    animation-duration: .5s;
 }
 .our-friends__grid{
     width: 1200px;
@@ -258,30 +258,7 @@ a {
     box-sizing: border-box;
     border-radius: 9px 9px 0px 0px;
 }
-.card__img-one {
-    background: url(../../../assets/images/pets/katrine.png);
-}
-.card__img-two {
-    background: url(../../../assets/images/pets/jennifer.png);
-}
-.card__img-three {
-    background: url(../../../assets/images/pets/woody.png);
-}
-.card__img-four {
-    background: url(../../../assets/images/pets/sophia.png);
-}
-.card__img-five {
-    background: url(../../../assets/images/pets/timmy.png);
-}
-.card__img-six {
-    background: url(../../../assets/images/pets/charly.png);
-}
-.card__img-seven {
-    background: url(../../../assets/images/pets/scarlett.png);
-}
-.card__img-eight {
-    background: url(../../../assets/images/pets/freddie.png);
-}
+
 .card__text {
     font-size: 20px;
     line-height: 23px;
@@ -325,13 +302,13 @@ a {
     letter-spacing: 0.06em;
 }
 .btn-left_end{
-    border: 2px solid #CDCDCD;
-    color: #CDCDCD;
+    border: 2px solid #F1CDB3;
+    color: #292929;
 }
 .btn-left{
     margin-left: 15px;
-    border: 2px solid #CDCDCD;
-    color: #CDCDCD;
+    border: 2px solid #F1CDB3;
+    color: #292929;
 
 }
 .btn-center{
@@ -342,8 +319,8 @@ a {
     color: #292929;
 }
 .btn-right{
-    border: 2px solid #F1CDB3;
     margin-right: 15px;
+    border: 2px solid #F1CDB3;
     color: #292929;
 }
 .btn-right_end{
@@ -358,6 +335,14 @@ a {
     background: #F1CDB3;
     color: #292929;
     border: 2px solid #F1CDB3;
+}
+.btn-left_end.inactive_btn,
+.btn-left.inactive_btn,
+.btn-right.inactive_btn,
+.btn-right_end.inactive_btn{
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
+    pointer-events: none;
 
 }
 /* end our_friends */

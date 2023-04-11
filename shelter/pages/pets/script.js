@@ -90,7 +90,9 @@ const petsList =
         "parasites": ["none"]
     }
   ]
-/*Бургер меню*/
+//======================================================
+// ================== BURGER ===========================
+//======================================================
 const menu = document.querySelector('.menu');
 const iconBurger = document.querySelector('.burger');
 const menuList = document.querySelector('.menu__row');
@@ -179,9 +181,17 @@ function removePopupScroll() {
 // ================== PAGINATION ===========================
 //======================================================
 const PAGINATION = document.querySelector('.pagination__content')
-const activeItems = document.querySelector('.item-center');
-const leftItems = document.querySelector('.item-left');
-const rightItems = document.querySelector('.item-right');
+const centerSlide = document.querySelector('.item-center');
+const leftSlide = document.querySelector('.item-left');
+const rightSlide = document.querySelector('.item-right');
+const leftBtn = document.querySelector('.btn-left');
+const centerBtn = document.querySelector('.btn-center');
+const rightBtn = document.querySelector('.btn-right');
+const startBtn = document.querySelector(".btn-left_end");
+const endBtn = document.querySelector(".btn-right_end");
+const mediaTablet = window.matchMedia("(max-width: 1240px)");
+const mediaMobile = window.matchMedia("(max-width: 767px)");
+let currentSlide = 1;
 
 
 // ------------- Creat Card -----------------------
@@ -196,13 +206,12 @@ const createCardTemplate = (src, name, num) => {
     cardText.classList.add("card__text");
     cardBtn.classList.add("card__btn");
     cardText.textContent = name;
-    cardBtn.textContent = `${petsList[0].button}`
+    cardBtn.textContent = `Learn More`
     card.append(imgCard, cardText, cardBtn);
-    activeItems.append(card);
+    centerSlide.append(card);
 
 // ------------ Open popup ----------------
     function openPopup () {
-        let num = 0
         popup.classList.add('active');
         popupBody.classList.add('active');
         removePopupScroll()
@@ -219,43 +228,319 @@ const createCardTemplate = (src, name, num) => {
 return card;
 }
 
+// ------------------------ WIDTH -------------------------
+
+let maxSlide = 6;
+  if (mediaTablet.matches) {
+    maxSlide = 8;
+  }
+  if (mediaMobile.matches) {
+    maxSlide = 16;
+  }
+
+//--------------------RANDOM ARRAY------------------------
+let arrSlides = [];
+let arrSlide = [];
+
+function creatCardsOnSlide() {
+  if (mediaTablet.matches) {
+    maxSlide = 8;
+  }
+  if (mediaMobile.matches) {
+    maxSlide = 16;
+  }
+  for (let i = 0; i < maxSlide; i++) {
+    let maxCards = 8;
+    if (mediaTablet.matches) {
+      maxCards = 6;
+    }
+    if (mediaMobile.matches) {
+      maxCards = 3;
+    }
+    while (arrSlide.length < maxCards) {
+      let num = Math.floor(Math.random() * 8);
+      if (arrSlide.indexOf(num) === -1) {
+        arrSlide.push(num);
+      }
+    }
+    arrSlides.push(arrSlide);
+    arrSlide = [];
+  }
+}
+creatCardsOnSlide();
+
+
+// ------------- REMOVE CLICK BTN--------------------------
+function removeLeftBtn () {
+    leftBtn.removeEventListener("click", toggleLeft, true);
+}
+function removeRighttBtn () {
+    rightBtn.removeEventListener("click", toggleRight, true);
+}
+function removeEndBtn () {
+    endBtn.removeEventListener("click", toggleEnd, true);
+}
+function removeStartBtn () {
+    startBtn.removeEventListener("click", toggleStart, true);
+}
+//---------------- ADD CLICK BTN--------------------------
+function addLeftBtn () {
+    leftBtn.addEventListener("click", toggleLeft, true);
+}
+function addRighttBtn () {
+    rightBtn.addEventListener("click", toggleRight, true);
+}
+function addEndBtn () {
+    endBtn.addEventListener("click", toggleEnd, true);
+}
+function addStartBtn () {
+    startBtn.addEventListener("click", toggleStart, true);
+}
+//----------------- INACTIVE --------------------
+function inactiveLeftBtn () {
+    leftBtn.classList.add("inactive_btn");
+}
+function inactiveRightBtn () {
+    rightBtn.classList.add("inactive_btn");
+}
+function inactiveFirstBtn () {
+    startBtn.classList.add("inactive_btn");
+}
+function inactiveLastBtn () {
+    endBtn.classList.add("inactive_btn");
+}
+//----------------- ACTIVE --------------------
+function activeLeftBtn () {
+    leftBtn.classList.remove("inactive_btn");
+}
+function activeRightBtn () {
+    rightBtn.classList.remove("inactive_btn");
+}
+function activeFirstBtn () {
+    startBtn.classList.remove("inactive_btn");
+}
+function activeLastBtn () {
+    endBtn.classList.remove("inactive_btn");
+}
+
+
+//------------------- RIGHT BTN---------------------
+const toggleRight = () => {
+    if (currentSlide < maxSlide) {
+        currentSlide += 1;
+        centerBtn.textContent = `${currentSlide}`;
+        PAGINATION.classList.add('transition-right');
+        removeLeftBtn ()
+        removeRighttBtn ()
+        inactiveLeftBtn ()
+        inactiveFirstBtn ()
+    } else {
+        removeRighttBtn ()
+    }
+    changeActiveBtn();
+};
+//------------------- LEFT BTN---------------------
+const toggleLeft = () => {
+    if (currentSlide >= 2) {
+        currentSlide -= 1;
+        centerBtn.textContent = `${currentSlide}`;
+        PAGINATION.classList.add('transition-left');
+        inactiveLastBtn ()
+        inactiveRightBtn
+        removeLeftBtn ()
+        removeRighttBtn ()
+    } else {
+        removeLeftBtn ()
+    }
+    changeActiveBtn ();
+};
+addRighttBtn ();
+addLeftBtn ();
+// ------------------- START BTN ----------------------------------
+const toggleStart = function () {
+    if (currentSlide >= 2) {
+        currentSlide = 1;
+      createCenterSlide();
+      centerBtn.textContent = `${currentSlide}`;
+      PAGINATION.classList.add("transition-left");
+      inactiveLastBtn ()
+      inactiveRightBtn
+      removeLeftBtn ()
+      removeRighttBtn ()
+      changeActiveBtn ();
+    } else {
+      removeStartBtn()
+    }
+  };
+// ------------------- END BTN ----------------------------------
+  const toggleEnd = function () {
+    if (mediaTablet.matches) {
+        maxSlide = 8;
+    }
+    if (mediaMobile.matches) {
+        maxSlide = 16;
+    }
+    if (currentSlide < maxSlide) {
+        currentSlide = maxSlide;
+      createCenterSlide();
+      centerBtn.textContent = `${currentSlide}`;
+      PAGINATION.classList.add("transition-right");
+      inactiveFirstBtn ()
+      inactiveLeftBtn ()
+      removeRighttBtn ()
+      removeLeftBtn ()
+      changeActiveBtn ();
+    } else {
+      removeEndBtn ()
+    }
+  };
+  addStartBtn ()
+  addEndBtn ();
+
+//------------------- CREAT ARR---------------------
+let centerArr = [];
+function activeNum() {
+    centerArr.push(...arrSlides[currentSlide - 1]);
+}
+activeNum();
+// -----------------------------------------------
+let leftArr = [];
+function activeLeft() {
+  if (currentSlide >= 2) {
+    leftArr.push(...arrSlides[currentSlide - 2]);
+  } else {
+    leftArr = [];
+    removeLeftBtn ()
+  }
+}
+activeLeft();
+// --------------------------------------------------
+let rightArr = [];
+function activeRight() {
+  if (mediaTablet.matches) {
+    maxSlide = 8;
+  }
+  if (mediaMobile.matches) {
+    maxSlide = 16;
+  }
+  if (currentSlide < maxSlide) {
+    rightArr.push(...arrSlides[currentSlide]);
+  } else {
+    rightArr = [];
+    removeRighttBtn ()
+  }
+}
+activeRight();
+
 //------------------- CREAT SLIDER---------------------
 
-function createActiveItems() {
-    activeItems.innerHTML = "";
-    for (let i = 0; i < 8; i++) {
+function createCenterSlide() {
+    centerSlide.innerHTML = "";
+    for (let i = 0; i < centerArr.length; i++) {
       let card = createCardTemplate(
-        `${petsList[[i]].img}`,
-        `${petsList[[i]].name}`,
-        [i]
+        `${petsList[centerArr[i]].img}`,
+        `${petsList[centerArr[i]].name}`,
+        centerArr[i]
       );
-      activeItems.appendChild(card);
+      centerSlide.appendChild(card);
     }
   }
-  createActiveItems();
-
-  function createRightItems() {
-    rightItems.innerHTML = "";
-    for (let i = 0; i < 8; i++) {
+  createCenterSlide();
+// -------------------------------------------------------------
+  function createRightSlide() {
+    rightSlide.innerHTML = "";
+    for (let i = 0; i < rightArr.length; i++) {
       let card = createCardTemplate(
-        `${petsList[[i]].img}`,
-        `${petsList[[i]].name}`
+        `${petsList[rightArr[i]].img}`,
+        `${petsList[rightArr[i]].name}`
       );
-      rightItems.appendChild(card);
+      rightSlide.appendChild(card);
     }
   }
-  createRightItems();
-
-  function createLeftItems() {
-    leftItems.innerHTML = "";
-    for (let i = 0; i < 8; i++) {
+  createRightSlide();
+// ------------------------------------------------------------------
+  function createLeftSlide() {
+    leftSlide.innerHTML = "";
+    for (let i = 0; i < leftArr.length; i++) {
       let card = createCardTemplate(
-        `${petsList[[i]].img}`,
-        `${petsList[[i]].name}`
+        `${petsList[leftArr[i]].img}`,
+        `${petsList[leftArr[i]].name}`
       );
-      leftItems.appendChild(card);
+      leftSlide.appendChild(card);
     }
   }
-  createLeftItems();
+  createLeftSlide();
 
 
+  //------------------- ANIMATION -------------
+PAGINATION.addEventListener('animationend', (animationEvent)=>{
+    if (animationEvent.animationName === 'move-left') {
+        PAGINATION.classList.remove('transition-left');
+        rightArr = centerArr;
+        centerArr = leftArr;
+        leftArr = [];
+        activeLastBtn ();
+        activeRightBtn ();
+
+        activeLeft();
+    } else {
+        PAGINATION.classList.remove('transition-right');
+        leftArr = centerArr;
+        centerArr = rightArr;
+        rightArr = [];
+        activeFirstBtn ();
+        activeLeftBtn ();
+
+        activeRight();
+    }
+    createCenterSlide();
+    createRightSlide();
+    createLeftSlide();
+    addLeftBtn ()
+    addRighttBtn ()
+});
+
+// ---------------------- CHANGE BTN  ------------------------------
+  function changeActiveBtn() {
+    if (mediaTablet.matches) {
+        maxSlide = 8;
+    }
+    if (mediaMobile.matches) {
+        maxSlide = 16;
+    }
+    if (currentSlide === 1) {
+      inactiveFirstBtn ()
+      inactiveLeftBtn ()
+      removeLeftBtn ()
+      removeStartBtn ()
+    }
+    if (currentSlide === maxSlide) {
+      inactiveLastBtn ()
+      inactiveRightBtn ()
+      removeRighttBtn ()
+      removeEndBtn ()
+    }
+    if (currentSlide != 1) {
+      addLeftBtn ()
+      addStartBtn ()
+      addEndBtn ();
+      addRighttBtn ();
+    }
+  }
+  changeActiveBtn();
+
+  // ---------------------  RESIZE ---------------------
+window.addEventListener("resize", () => {
+    arrSlides = [];
+    arrSlide = [];
+    creatCardsOnSlide();
+    centerArr = [];
+    leftArr = [];
+    rightArr = [];
+    activeNum();
+    activeLeft();
+    activeRight();
+    createCenterSlide();
+    createLeftSlide();
+    createRightSlide();
+  });

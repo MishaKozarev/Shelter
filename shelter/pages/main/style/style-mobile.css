@@ -18,7 +18,7 @@
     }
     .transition-right {
         animation-name: move-right;
-        animation-duration: 2s;
+        animation-duration: .5s;
     }
     @keyframes move-left {
         from {left: -280px;}
@@ -26,7 +26,7 @@
     }
     .transition-left {
         animation-name: move-left;
-        animation-duration: 2s;
+        animation-duration: .5s;
     }
 }
 
