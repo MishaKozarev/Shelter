@@ -232,6 +232,19 @@ a {
     grid-row-gap: 30px;
 }
 
+.pet_box {
+    width: 270px;
+    height: 435px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FAFAFA;
+    border-radius: 9px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 1;
+}
 .card {
     width: 270px;
     height: 435px;

@@ -90,6 +90,7 @@ const petsList =
         "parasites": ["none"]
     }
   ]
+
 //======================================================
 // ================== BURGER ===========================
 //======================================================
@@ -181,6 +182,7 @@ function removePopupScroll() {
 // ================== PAGINATION ===========================
 //======================================================
 const PAGINATION = document.querySelector('.pagination__content')
+const conteiner = document.querySelector('.pagination')
 const centerSlide = document.querySelector('.item-center');
 const leftSlide = document.querySelector('.item-left');
 const rightSlide = document.querySelector('.item-right');
@@ -230,6 +232,7 @@ return card;
 
 // ------------------------ SLIDE of WIDTH -------------------------
 
+
 let maxSlide = 6;
   if (mediaTablet.matches) {
     maxSlide = 8;
@@ -238,7 +241,7 @@ let maxSlide = 6;
     maxSlide = 16;
   }
   for (let i = 0; i < maxSlide; i++) {
-    let maxCards = 8;
+    maxCards = 8;
     if (mediaTablet.matches) {
       maxCards = 6;
     }
@@ -407,6 +410,7 @@ const toggleStart = function () {
   addStartBtn ()
   addEndBtn ();
 
+
 //------------------- CREAT ARR---------------------
 let centerArr = [];
 function creatCenterArr() {
@@ -538,18 +542,35 @@ PAGINATION.addEventListener('animationend', (animationEvent)=>{
   }
   changeActiveBtn();
 
+
 //   // ---------------------  RESIZE ---------------------
 window.addEventListener("resize", () => {
-    arrSlides = [];
-    arrSlide = [];
-    creatCardsOnSlide();
-    centerArr = [];
-    leftArr = [];
-    rightArr = [];
-    creatCenterArr();
-    crearLeftArr();
-    creatRightArr();
-    createCenterSlide();
-    createLeftSlide();
-    createRightSlide();
-  });
+  creatCardsOnSlide();
+
+  numberBtn = 1;
+  centerBtn.textContent = `${numberBtn}`;
+  maxSlide = 6;
+
+  inactiveLeftBtn ()
+  inactiveStartBtn ()
+  activeEndtBtn ()
+  activeRightBtn ()
+
+  addLeftBtn ()
+  addRighttBtn ()
+  addEndBtn ()
+  addStartBtn ()
+
+  changeActiveBtn()
+  centerArr = [];
+  leftArr = [];
+  rightArr = [];
+  creatCenterArr();
+  crearLeftArr();
+  creatRightArr();
+  createCenterSlide();
+  createLeftSlide();
+  createRightSlide();
+});
+
+
