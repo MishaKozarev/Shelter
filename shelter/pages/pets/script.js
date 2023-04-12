@@ -543,7 +543,7 @@ PAGINATION.addEventListener('animationend', (animationEvent)=>{
   changeActiveBtn();
 
 
-//   // ---------------------  RESIZE ---------------------
+// ---------------------  RESIZE ---------------------
 window.addEventListener("resize", () => {
   creatCardsOnSlide();
 
@@ -572,5 +572,3 @@ window.addEventListener("resize", () => {
   createLeftSlide();
   createRightSlide();
 });
-
-
