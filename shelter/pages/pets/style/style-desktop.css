@@ -179,7 +179,7 @@ a {
 /* start our_friends */
 .our-friends{
     width: 100%;
-    max-height: 1342px;
+    min-height: 1342px;
     background: #F6F6F6;
     position: relative;
 

@@ -50,6 +50,9 @@
         width: 240px;
         height: 341px;
     }
+    .popup {
+        height: fit-content;
+    }
     .popup__img {
         display: none;
     }

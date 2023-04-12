@@ -191,7 +191,7 @@ const startBtn = document.querySelector(".btn-left_end");
 const endBtn = document.querySelector(".btn-right_end");
 const mediaTablet = window.matchMedia("(max-width: 1240px)");
 const mediaMobile = window.matchMedia("(max-width: 767px)");
-let currentSlide = 1;
+let numberBtn = 1;
 
 
 // ------------- Creat Card -----------------------
@@ -228,7 +228,7 @@ const createCardTemplate = (src, name, num) => {
 return card;
 }
 
-// ------------------------ WIDTH -------------------------
+// ------------------------ SLIDE of WIDTH -------------------------
 
 let maxSlide = 6;
   if (mediaTablet.matches) {
@@ -237,8 +237,18 @@ let maxSlide = 6;
   if (mediaMobile.matches) {
     maxSlide = 16;
   }
+  for (let i = 0; i < maxSlide; i++) {
+    let maxCards = 8;
+    if (mediaTablet.matches) {
+      maxCards = 6;
+    }
+    if (mediaMobile.matches) {
+      maxCards = 3;
+    }
+  }
 
-//--------------------RANDOM ARRAY------------------------
+
+//--------WIDTH(1280,768,320): ARR --- (CARD ON THE SLAIDE(6,8,16) and MOVE(6,8,16))-----
 let arrSlides = [];
 let arrSlide = [];
 
@@ -270,6 +280,20 @@ function creatCardsOnSlide() {
 creatCardsOnSlide();
 
 
+
+//---------------- ADD CLICK BTN--------------------------
+function addLeftBtn () {
+  leftBtn.addEventListener("click", toggleLeft, true);
+}
+function addRighttBtn () {
+  rightBtn.addEventListener("click", toggleRight, true);
+}
+function addEndBtn () {
+  endBtn.addEventListener("click", toggleEnd, true);
+}
+function addStartBtn () {
+  startBtn.addEventListener("click", toggleStart, true);
+}
 // ------------- REMOVE CLICK BTN--------------------------
 function removeLeftBtn () {
     leftBtn.removeEventListener("click", toggleLeft, true);
@@ -283,57 +307,43 @@ function removeEndBtn () {
 function removeStartBtn () {
     startBtn.removeEventListener("click", toggleStart, true);
 }
-//---------------- ADD CLICK BTN--------------------------
-function addLeftBtn () {
-    leftBtn.addEventListener("click", toggleLeft, true);
+//----------------- ACTIVE BTN--------------------
+function activeLeftBtn () {
+  leftBtn.classList.remove("inactive_btn");
 }
-function addRighttBtn () {
-    rightBtn.addEventListener("click", toggleRight, true);
+function activeRightBtn () {
+  rightBtn.classList.remove("inactive_btn");
 }
-function addEndBtn () {
-    endBtn.addEventListener("click", toggleEnd, true);
+function activeFirstBtn () {
+  startBtn.classList.remove("inactive_btn");
 }
-function addStartBtn () {
-    startBtn.addEventListener("click", toggleStart, true);
+function activeEndtBtn () {
+  endBtn.classList.remove("inactive_btn");
 }
-//----------------- INACTIVE --------------------
+//----------------- INACTIVE BTN--------------------
 function inactiveLeftBtn () {
     leftBtn.classList.add("inactive_btn");
 }
 function inactiveRightBtn () {
     rightBtn.classList.add("inactive_btn");
 }
-function inactiveFirstBtn () {
+function inactiveStartBtn () {
     startBtn.classList.add("inactive_btn");
 }
-function inactiveLastBtn () {
+function inactiveEndtBtn () {
     endBtn.classList.add("inactive_btn");
 }
-//----------------- ACTIVE --------------------
-function activeLeftBtn () {
-    leftBtn.classList.remove("inactive_btn");
-}
-function activeRightBtn () {
-    rightBtn.classList.remove("inactive_btn");
-}
-function activeFirstBtn () {
-    startBtn.classList.remove("inactive_btn");
-}
-function activeLastBtn () {
-    endBtn.classList.remove("inactive_btn");
-}
-
 
 //------------------- RIGHT BTN---------------------
 const toggleRight = () => {
-    if (currentSlide < maxSlide) {
-        currentSlide += 1;
-        centerBtn.textContent = `${currentSlide}`;
+    if (numberBtn < maxSlide) {
+        numberBtn += 1;
+        centerBtn.textContent = `${numberBtn}`;
         PAGINATION.classList.add('transition-right');
         removeLeftBtn ()
         removeRighttBtn ()
         inactiveLeftBtn ()
-        inactiveFirstBtn ()
+        inactiveStartBtn ()
     } else {
         removeRighttBtn ()
     }
@@ -341,11 +351,11 @@ const toggleRight = () => {
 };
 //------------------- LEFT BTN---------------------
 const toggleLeft = () => {
-    if (currentSlide >= 2) {
-        currentSlide -= 1;
-        centerBtn.textContent = `${currentSlide}`;
+    if (numberBtn >= 2) {
+        numberBtn -= 1;
+        centerBtn.textContent = `${numberBtn}`;
         PAGINATION.classList.add('transition-left');
-        inactiveLastBtn ()
+        inactiveEndtBtn ()
         inactiveRightBtn
         removeLeftBtn ()
         removeRighttBtn ()
@@ -358,12 +368,12 @@ addRighttBtn ();
 addLeftBtn ();
 // ------------------- START BTN ----------------------------------
 const toggleStart = function () {
-    if (currentSlide >= 2) {
-        currentSlide = 1;
+    if (numberBtn >= 2) {
+      numberBtn = 1;
       createCenterSlide();
-      centerBtn.textContent = `${currentSlide}`;
+      centerBtn.textContent = `${numberBtn}`;
       PAGINATION.classList.add("transition-left");
-      inactiveLastBtn ()
+      inactiveEndtBtn ()
       inactiveRightBtn
       removeLeftBtn ()
       removeRighttBtn ()
@@ -380,12 +390,12 @@ const toggleStart = function () {
     if (mediaMobile.matches) {
         maxSlide = 16;
     }
-    if (currentSlide < maxSlide) {
-        currentSlide = maxSlide;
+    if (numberBtn < maxSlide) {
+      numberBtn = maxSlide;
       createCenterSlide();
-      centerBtn.textContent = `${currentSlide}`;
+      centerBtn.textContent = `${numberBtn}`;
       PAGINATION.classList.add("transition-right");
-      inactiveFirstBtn ()
+      inactiveStartBtn ()
       inactiveLeftBtn ()
       removeRighttBtn ()
       removeLeftBtn ()
@@ -399,41 +409,42 @@ const toggleStart = function () {
 
 //------------------- CREAT ARR---------------------
 let centerArr = [];
-function activeNum() {
-    centerArr.push(...arrSlides[currentSlide - 1]);
+function creatCenterArr() {
+    centerArr.push(...arrSlides[numberBtn - 1]);
 }
-activeNum();
+creatCenterArr();
 // -----------------------------------------------
 let leftArr = [];
-function activeLeft() {
-  if (currentSlide >= 2) {
-    leftArr.push(...arrSlides[currentSlide - 2]);
+function crearLeftArr() {
+  if (numberBtn >= 2) {
+    leftArr.push(...arrSlides[numberBtn - 2]);
   } else {
     leftArr = [];
     removeLeftBtn ()
   }
 }
-activeLeft();
+crearLeftArr();
 // --------------------------------------------------
 let rightArr = [];
-function activeRight() {
+function creatRightArr() {
   if (mediaTablet.matches) {
     maxSlide = 8;
   }
   if (mediaMobile.matches) {
     maxSlide = 16;
   }
-  if (currentSlide < maxSlide) {
-    rightArr.push(...arrSlides[currentSlide]);
+  if (numberBtn < maxSlide) {
+    rightArr.push(...arrSlides[numberBtn]);
   } else {
     rightArr = [];
     removeRighttBtn ()
   }
 }
-activeRight();
+creatRightArr();
+
+
 
 //------------------- CREAT SLIDER---------------------
-
 function createCenterSlide() {
     centerSlide.innerHTML = "";
     for (let i = 0; i < centerArr.length; i++) {
@@ -479,10 +490,9 @@ PAGINATION.addEventListener('animationend', (animationEvent)=>{
         rightArr = centerArr;
         centerArr = leftArr;
         leftArr = [];
-        activeLastBtn ();
+        activeEndtBtn ();
         activeRightBtn ();
-
-        activeLeft();
+        crearLeftArr();
     } else {
         PAGINATION.classList.remove('transition-right');
         leftArr = centerArr;
@@ -490,8 +500,7 @@ PAGINATION.addEventListener('animationend', (animationEvent)=>{
         rightArr = [];
         activeFirstBtn ();
         activeLeftBtn ();
-
-        activeRight();
+        creatRightArr();
     }
     createCenterSlide();
     createRightSlide();
@@ -508,19 +517,19 @@ PAGINATION.addEventListener('animationend', (animationEvent)=>{
     if (mediaMobile.matches) {
         maxSlide = 16;
     }
-    if (currentSlide === 1) {
-      inactiveFirstBtn ()
+    if (numberBtn === 1) {
+      inactiveStartBtn ()
       inactiveLeftBtn ()
       removeLeftBtn ()
       removeStartBtn ()
     }
-    if (currentSlide === maxSlide) {
-      inactiveLastBtn ()
+    if (numberBtn === maxSlide) {
+      inactiveEndtBtn ()
       inactiveRightBtn ()
       removeRighttBtn ()
       removeEndBtn ()
     }
-    if (currentSlide != 1) {
+    if (numberBtn != 1) {
       addLeftBtn ()
       addStartBtn ()
       addEndBtn ();
@@ -529,7 +538,7 @@ PAGINATION.addEventListener('animationend', (animationEvent)=>{
   }
   changeActiveBtn();
 
-  // ---------------------  RESIZE ---------------------
+//   // ---------------------  RESIZE ---------------------
 window.addEventListener("resize", () => {
     arrSlides = [];
     arrSlide = [];
@@ -537,9 +546,9 @@ window.addEventListener("resize", () => {
     centerArr = [];
     leftArr = [];
     rightArr = [];
-    activeNum();
-    activeLeft();
-    activeRight();
+    creatCenterArr();
+    crearLeftArr();
+    creatRightArr();
     createCenterSlide();
     createLeftSlide();
     createRightSlide();

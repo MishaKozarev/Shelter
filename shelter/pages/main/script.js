@@ -1,4 +1,7 @@
 console.log('1)Вёрстка страницы Main соответствует макету при ширине экрана 1280px: +14;\n2)Вёрстка страницы Main соответствует макету при ширине экрана 768px: +14; \n3)Вёрстка страницы Main соответствует макету при ширине экрана 320px: +14; \n4)Вёрстка страницы Pets соответствует макету при ширине экрана 1280px: +6;\n5)Вёрстка страницы Pets соответствует макету при ширине экрана 768px: +6;\n6)Вёрстка страницы Pets соответствует макету при ширине экрана 320px: +6;\n7)Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки, справа от отдельных блоков не появляются белые поля. Весь контент страницы при этом сохраняется: не обрезается и не удаляется: +20;\n8)Верстка резиновая: при плавном изменении размера экрана от 1280px до 320px верстка подстраивается под этот размер, элементы верстки меняют свои размеры и расположение, не наезжают друг на друга, изображения могут менять размер, но сохраняют правильные пропорции (Примеры неправильной и правильной реализации): +8;\n9)При ширине экрана меньше 768px на обеих страницах меню в хедере скрывается, появляется иконка бургер-меню: +4\n(Открытие меню при клике на иконку бургер-меню на текущем этапе не проверяется);\n10)Верстка обеих страниц валидная: для проверки валидности вёрстки используйте сервис https://validator.w3.org/ : +8');
+window.alert(
+  "Добрый день! К сожалению я не до конца доделал весь функционал, Вы имеете полное право проверить работу сейчас и выставить те балы которые соответствуют на данный момент, но если у вас есть возможность проверте работу в конце кросс-чека(13.04.2023), я буду вам очень благодарен!"
+);
 const petsList =
 [
     {
@@ -32,8 +35,8 @@ const petsList =
         "breed": "Golden Retriever",
         "description": "Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.",
         "age": "3 years 6 months",
-        "inoculations": ["adenovirus", "distemper"],
-        "diseases": ["right back leg mobility reduced"],
+        "inoculations": ["adenovirus"],
+        "diseases": ["right back leg "],
         "parasites": ["none"]
     },
     {
@@ -54,7 +57,7 @@ const petsList =
         "breed": "British Shorthair",
         "description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
         "age": "2 years 3 months",
-        "inoculations": ["calicivirus", "viral rhinotracheitis"],
+        "inoculations": ["calicivirus"],
         "diseases": ["kidney stones"],
         "parasites": ["none"]
     },
@@ -65,7 +68,7 @@ const petsList =
         "breed": "Jack Russell Terrier",
         "description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
         "age": "8 years",
-        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "inoculations": ["leptospirosis"],
         "diseases": ["deafness", "blindness"],
         "parasites": ["lice", "fleas"]
     },
@@ -291,7 +294,7 @@ function createCenterSlide() {
       let num = centerArr[i]
       let card = createCardTemplate(petImg, petName, num);
       centerSlide.appendChild(card);
-    } 
+    }
   }
   createCenterSlide();
 
@@ -363,8 +366,3 @@ window.addEventListener("resize", () => {
     createLeftSlide();
     createRightItems();
 });
-
-
-
-
-
