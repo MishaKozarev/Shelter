@@ -514,6 +514,8 @@ a {
     border-radius: 50px;
     background: #F1CDB3;
     margin: 0 10px 2px 0;
+    line-height: 110%;
+
 }
 .description {
     margin-bottom: 40px;
@@ -530,9 +532,12 @@ a {
 }
 .info-text {
     font-weight: 400;
+    line-height: 110%;
+
 }
 .point {
     font-weight: 700;
+    line-height: 160%;
 }
 
 /* end OUR-FRIENDS */

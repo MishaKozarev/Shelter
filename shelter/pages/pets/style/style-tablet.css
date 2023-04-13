@@ -91,7 +91,6 @@
     .header__row {
         padding: 0 10px;
     }
-    
     .nav {
         margin: 38px 0 78px;
     }
@@ -103,5 +102,17 @@
     }
     .footer__img {
         align-items: center;
+    }
+}
+@media(max-width:768px){
+    .btn-left_end:hover,
+    .btn-right_end:hover{
+    background: #F6F6F6;
+    color: #CDCDCD;
+    border: 2px solid #CDCDCD;;
+    }
+    .btn-left:hover,
+    .btn-right:hover{
+    background: #F6F6F6;
     }
 }
